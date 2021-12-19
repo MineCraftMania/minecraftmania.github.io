@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Mono&family=Quicksand:wght@500&display=swap" rel="stylesheet">
+<style>
+    html,body {
+        margin: 0;
+        padding: 0;
+        background-color: #15161A;
+    }
+    .content {
+        width: 100%;
+        margin: auto;
+        height: 1380px;
+    }
+    form {
+        width: 70%;
+        margin: auto;
+        background-color: #22252D;
+        color: #fff;
+        font-family: sans-serif;
+        padding: 10px;
+    }
+    p {
+        display: inline-block;
+        width: 90%;;
+        margin: 5px 0px 5px 0px;
+        font-size: 24px;
+        font-family: 'Quicksand', sans-serif;
+    }
+    h1 {
+        font-size: 26px;
+        font-family: 'Quicksand', sans-serif;
+        text-align: center;
+        text-decoration: underline
+    }
+    .resultbox {
+        border: 3px solid #f3502c;
+        border-radius: 10px;
+        background-color: #16171D;
+        width: 80%;
+        margin: 20px auto 0px auto;
+        padding: 10px 10px 10px 10px;
+        font-family: 'Quicksand', sans-serif;
+        font-size: 14px;
+        color: #fff;
+    }
+    select {
+        appearance: none;
+        padding: 0px 0px 0px 8px;
+        width: 260px;
+        height: 28px;
+        font-family: 'Quicksand', sans-serif;
+        background: rgb(57,63,66);
+        background: linear-gradient(180deg, rgba(57,63,66,1) 0%, rgba(47,50,58,1) 100%);
+        border-radius: 10px;
+        transition: all 0.2s ease 0s;
+        color: #fff;
+        font-size: 16px;
+        border: none;
+        outline: 0;
+    }
+    select:focus, select:hover {
+        border-radius: 10px 10px 0px 0px;
+        width: 280px;
+    }
+    option {
+        background: #15161A;
+    }
+    input[type="text"], input[type="number"] {
+        width: 250px;
+        height: 20px;
+        font-family: 'Quicksand', sans-serif;
+        border-radius: 10px;
+        border: none;
+        outline: 0;
+        height: 25px;
+        padding: 0px 0px 0px 8px;
+        background: rgb(57,63,66);
+        background: linear-gradient(180deg, rgba(57,63,66,1) 0%, rgba(47,50,58,1) 100%);
+        font-size: 16px;
+        color: #fff;
+        transition: all 0.2s ease 0s;
+        margin-left: -10px;
+    }
+    input[type="text"]:focus, input[type="text"]:hover {
+        width: 275px;
+    }
+    .optionbox {
+        width: 100%;
+        margin: 0px 0px 15px 0px;
+    }
+    #expandable {
+        display: none;
+    }
+    label {
+        display: block;
+        cursor: text;
+    }
+    .description {
+        display: block;
+        margin: 0px 0px 5px 0px;
+        padding: 0px 20px 0px 20px;
+        width: 90%;
+        font-size: 14px;
+        font-family: 'Quicksand', sans-serif;
+        text-align: justify;
+        color: #888d97
+    }
+    .organizer {
+        width: 100%;
+        margin: 0px 0px 20px 0px;
+        padding: 0;
+        text-align: center
+    }
+    .organizer tr td {
+        width: 40%;
+        vertical-align:top;
+        text-align: center;
+    }
+    option[disabled] {
+        text-align: center;
+    }
+    .center {
+        text-align: center;
+    }
+    h2, h3 {
+        text-align: center;
+        font-family: 'Quicksand', sans-serif;
+        margin: 0;
+    }
+    h2 {
+        font-size: 40px;
+    }
+    #lblmess0a {
+        color: #5C6370
+    }
+    .required::after { 
+        content: "(Required)";
+        font-size: 14px;
+        color: #e84c2a;
+        font-weight: bold;
+    }
+    .optional::after { 
+        content: "(Optional)";
+        font-size: 14px;
+        color: #e84c2a;
+    }
+    a {
+        color: inherit;
+        
+    }
+    .expand-icon {
+        float: right;
+        margin: -10px 20px 0px 0px;
+        transform: rotate(90deg);
+        font-size: 30px;
+        font-style: normal;
+        padding: 0;
+    }
+    .hideshowbtn {
+        width: 100%;
+        margin: auto;
+        font-family: 'Quicksand', sans-serif;
+        display: flex;
+        overflow: hidden;
+        height: 32px;
+        background-color: #4d555e;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        
+    }
+    .showhide {
+        width: 15%;
+        padding-top: 6px;
+        font-size: 16px;
+        padding-left: 300px;
+        cursor: pointer;
+        user-select: none;
+    }
+    .title {
+        width: 85%;
+        padding-left: 10px;
+        font-size: 24px;
+    }
+    .biomediv {
+        width: 95%;
+        margin: 8px auto 8px auto;
+        display: flex;
+    }
+    .colordiv {
+        width: 100%;
+        height: 40px;
+        margin: 8px auto 8px auto;
+        display: flex;
+    }
+    .biomelabel {
+        display: inline;
+        user-select: none;
+        cursor: pointer;
+        transition: all 0.2s ease 0s;
+    }
+    .biomelabel:hover {
+        text-decoration: underline;
+    }
+    input[name="biomes"]:checked + .biomelabel {
+        color: #e84c2a;
+        font-weight: bold;
+    }
+    .biomeitem {
+        font-size: 16px;
+        width: 16.66%;
+        text-align: justify;
+    }
+    .coloritem {
+        width: 12.5%;
+        font-size: 35px;
+        text-align: justify;
+    }
+    .colorlabel {
+        display: inline-block;
+        user-select: none;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        transition: all 0.2s ease 0s;
+    }
+    .colorlabel:hover {
+        transform: rotate(45deg);
+    }
+    input[name="colors"]:checked + .colorlabel {
+        border-radius: 10px;
+        transform: rotate(0deg);
+    }
+    input[name="biomes"], input[name="colors"] {
+        display: none
+    }
+    #tableA {
+        background-color: #15161A;
+        display: block;
+    }
+    #variantinput {
+        background: none;
+        background: #15161A;
+        border-radius: 0px;
+    }
+    .bug {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        width: 150px;
+        text-align: center;
+        color: #FFF;
+        font-weight: bold;
+    }
+    .bugbutton {
+        width: 100px;
+        border-radius: 200px;
+        height: 100px;
+        background: rgb(239,49,40);
+        background: linear-gradient(45deg, rgba(239,49,40,1) 0%, rgba(253,113,49,1) 100%);
+        margin: auto;
+        transition: all 0.2s ease 0s;
+    }
+    .bugbutton img {
+        width: 80%;
+        margin-top: 10px
+    }
+    
+    .bug:hover .bugbutton {
+        transform: scale(0.95)
+    }
+</style>
+</head>
+<body>
+    
+    
+<div class="bug"><a href="https://github.com/pablomcprojects/pablomcprojects.github.io/issues" target="_blank" style="text-decoration: none"><div class="bugbutton"><img src="https://imgur.com/4zx4WCI.png"></div><p style="text-align: center; font-size: 18px">Report bugs</p></a></div>
+    
+    
+    
+<div class="content">
+    <form name="formid">
+<h2>Random Entity Generator</h2>
+<h3>by <a href="https://pablomcprojects.github.io/pablomcprojects/" style="color: #e84c2a; font-style: italic">pablomcprojects</a></h3>
+<h1>Properties</h1>
+<table class="organizer" id="tableA">
+    <div class="hideshowbtn">
+        <div class="title">Variant Number: &nbsp;&nbsp;<input id="variantinput" type="number" placeholder="Type the variant number here" value=""></div>
+    </div>
+    <tr>
+        <td>
+            <div class="optionbox">
+                <p>Textures <i class="required"></i></p>
+                    <p class="description center">Number or number range of the textures this variant uses.</p>
+                    <input id="textureName" type="text" placeholder="ex. 2 3 4" onkeyup="getTextureName()">
+            </div>
+        </td>
+        <td>
+            <div class="optionbox">
+                <p>Weights <i class="optional"></i></p>
+                    <p class="description">The chance each texture has of displaying in this variant, the number of weights must match the same number of textures used.<br>
+                    </p>
+                    <input type="text" id="weight" placeholder="ex. 50 25 25" onkeyup="getWeight()">
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div class="optionbox">
+                <p>Heights <i class="optional"></i></p>
+                    <p class="description">Specify the height (Y layer) number or number range the this variant will display in.
+                    </p>
+                    <input type="text" id="height" placeholder="ex. 0-63" onkeyup="getHeight()">
+            </div>
+        </td>
+        <td>
+            <div class="optionbox">
+                <p>Name <i class="optional"></i></p>
+                    <p class="description">The variant will only display in entities that match this name.
+                    </p>
+                    <input type="text" id="name" placeholder="ex. Lava Chicken" onkeyup="getName()">
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <div class="optionbox">
+                <p>Biomes <i class="optional"></i></p>
+                    <p class="description center">Specify the biomes this variant will display in.
+<div class="biomediv">
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="Ocean" value="Ocean" onchange="checkChecked()">
+        <label class="biomelabel" for="Ocean">Ocean</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="FrozenOcean" value="FrozenOcean" onchange="checkChecked()">
+        <label class="biomelabel" for="FrozenOcean">Frozen Ocean</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="DeepOcean" value="DeepOcean" onchange="checkChecked()">
+        <label class="biomelabel" for="DeepOcean">Deep Ocean</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="WarmOcean" value="WarmOcean" onchange="checkChecked()">
+        <label class="biomelabel" for="WarmOcean">Warm Ocean</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="LukewarmOcean" value="LukewarmOcean" onchange="checkChecked()">
+        <label class="biomelabel" for="LukewarmOcean">Lukewarm Ocean</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="ColdOcean" value="ColdOcean" onchange="checkChecked()">
+        <label class="biomelabel" for="ColdOcean">Cold Ocean</label></div>
+</div>
+                
+<div class="biomediv">
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="DeepWarmOcean" value="DeepWarmOcean" onchange="checkChecked()">
+        <label class="biomelabel" for="DeepWarmOcean">Deep Warm Ocean</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="DeepLukewarmOcean" value="DeepLukewarmOcean" onchange="checkChecked()">
+        <label class="biomelabel" for="DeepLukewarmOcean">Deep Lukewarm Ocean</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="DeepColdOcean" value="DeepColdOcean" onchange="checkChecked()">
+        <label class="biomelabel" for="DeepColdOcean">Deep Cold Ocean</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="DeepFrozenOcean" value="DeepFrozenOcean" onchange="checkChecked()">
+        <label class="biomelabel" for="DeepFrozenOcean">Deep Frozen Ocean</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="SunflowerPlains" value="SunflowerPlains" onchange="checkChecked()">
+        <label class="biomelabel" for="SunflowerPlains">Sunflower Plains</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="Plains" value="Plains" onchange="checkChecked()">
+        <label class="biomelabel" for="Plains">Plains</label></div>
+</div>
+                
+<div class="biomediv">
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="Desert" value="Desert" onchange="checkChecked()">
+        <label class="biomelabel" for="Desert">Desert</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="DesertHills" value="DesertHills" onchange="checkChecked()">
+        <label class="biomelabel" for="DesertHills">Desert Hills</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="DesertLakes" value="DesertLakes" onchange="checkChecked()">
+        <label class="biomelabel" for="DesertLakes">Desert Lakes</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="Forest" value="Forest" onchange="checkChecked()">
+        <label class="biomelabel" for="Forest">Forest</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="WoodedHills" value="WoodedHills" onchange="checkChecked()">
+        <label class="biomelabel" for="WoodedHills">Wooded Hills</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="FlowerForest" value="FlowerForest" onchange="checkChecked()">
+        <label class="biomelabel" for="FlowerForest">Flower Forest</label></div>
+</div>
+                
+<div class="biomediv">
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="Mountains" value="Mountains" onchange="checkChecked()">
+        <label class="biomelabel" for="Mountains">Mountains</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="SnowyMountains" value="SnowyMountains" onchange="checkChecked()">
+        <label class="biomelabel" for="SnowyMountains">Snowy Mountains</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="MountainEdge" value="MountainEdge" onchange="checkChecked()">
+        <label class="biomelabel" for="MountainEdge">Mountain Edge</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="WoodedMountains" value="WoodedMountains" onchange="checkChecked()">
+        <label class="biomelabel" for="WoodedMountains">Wooded Mountains</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="GravellyMountains" value="GravellyMountains" onchange="checkChecked()">
+        <label class="biomelabel" for="GravellyMountains">Gravelly Mountains</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="ModifiedGravellyMountains" value="ModifiedGravellyMountains" onchange="checkChecked()">
+        <label class="biomelabel" for="ModifiedGravellyMountains">Gravelly Mountains+</label></div>
+</div>
+                
+<div class="biomediv">
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="Badlands" value="Badlands" onchange="checkChecked()">
+        <label class="biomelabel" for="Badlands">Badlands</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="BadlandsPlateau" value="BadlandsPlateau" onchange="checkChecked()">
+        <label class="biomelabel" for="BadlandsPlateau">Badlands Plateau</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="WoodedBadlandsPlateau" value="WoodedBadlandsPlateau" onchange="checkChecked()">
+        <label class="biomelabel" for="WoodedBadlandsPlateau">Wooded Badl. Plat.</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="ModifiedWoodedBadlandsPlateau" value="ModifiedWoodedBadlandsPlateau" onchange="checkChecked()">
+        <label class="biomelabel" for="ModifiedWoodedBadlandsPlateau">Wooded Badl. Plat.+</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="ErodedBadlands" value="ErodedBadlands" onchange="checkChecked()">
+        <label class="biomelabel" for="ErodedBadlands">Eroded Badlands</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="ModifiedBadlandsPlateau" value="ModifiedBadlandsPlateau" onchange="checkChecked()">
+        <label class="biomelabel" for="ModifiedBadlandsPlateau">Badlands Plateau+</label></div>
+</div>
+                
+<div class="biomediv">
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="Taiga" value="Taiga" onchange="checkChecked()">
+        <label class="biomelabel" for="Taiga">Taiga</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="TaigaHills" value="TaigaHills" onchange="checkChecked()">
+        <label class="biomelabel" for="TaigaHills">Taiga Hills</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="GiantTreeTaiga" value="GiantTreeTaiga" onchange="checkChecked()">
+        <label class="biomelabel" for="GiantTreeTaiga">Giant Tree Taiga</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="GiantTreeTaigaHills" value="GiantTreeTaigaHills" onchange="checkChecked()">
+        <label class="biomelabel" for="GiantTreeTaigaHills">Giant Tree Taiga Hills</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="TaigaMountins" value="TaigaMountins" onchange="checkChecked()">
+        <label class="biomelabel" for="TaigaMountins">Taiga Mountins</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="GiantSpruceTaiga" value="GiantSpruceTaiga" onchange="checkChecked()">
+        <label class="biomelabel" for="GiantSpruceTaiga">Giant Spruce Taiga</label></div>
+</div>
+                
+<div class="biomediv">
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="GiantSpruceTaigaHills" value="GiantSpruceTaigaHills" onchange="checkChecked()">
+        <label class="biomelabel" for="GiantSpruceTaigaHills">Giant Spruce Taiga Hills</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="River" value="River" onchange="checkChecked()">
+        <label class="biomelabel" for="River">River</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="FrozenRiver" value="FrozenRiver" onchange="checkChecked()">
+        <label class="biomelabel" for="FrozenRiver">Frozen River</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="Beach" value="Beach" onchange="checkChecked()">
+        <label class="biomelabel" for="Beach">Beach</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="StoneShore" value="StoneShore" onchange="checkChecked()">
+        <label class="biomelabel" for="StoneShore">Stone Shore</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="SnowyBeach" value="SnowyBeach" onchange="checkChecked()">
+        <label class="biomelabel" for="SnowyBeach">Snowy Beach</label></div>
+</div>
+                
+<div class="biomediv">
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="SnowyTundra" value="SnowyTundra" onchange="checkChecked()">
+        <label class="biomelabel" for="SnowyTundra">Snowy Tundra</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="SnowyTaiga" value="SnowyTaiga" onchange="checkChecked()">
+        <label class="biomelabel" for="SnowyTaiga">Snowy Taiga</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="SnowyTaigaHills" value="SnowyTaigaHills" onchange="checkChecked()">
+        <label class="biomelabel" for="SnowyTaigaHills">Snowy Taiga Hills</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="IceSpikes" value="IceSpikes" onchange="checkChecked()">
+        <label class="biomelabel" for="IceSpikes">Ice Spikes</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="SnowyTaigaMountains" value="SnowyTaigaMountains" onchange="checkChecked()">
+        <label class="biomelabel" for="SnowyTaigaMountains">Snowy Taiga Mountains</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="Void" value="Void" onchange="checkChecked()">
+        <label class="biomelabel" for="Void">Void</label></div>
+</div>
+                
+<div class="biomediv">
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="BirchForest" value="BirchForest" onchange="checkChecked()">
+        <label class="biomelabel" for="BirchForest">Birch Forest</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="BirchForestHills" value="BirchForestHills" onchange="checkChecked()">
+        <label class="biomelabel" for="BirchForestHills">Birch Forest Hills</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="TallBirchForest" value="TallBirchForest" onchange="checkChecked()">
+        <label class="biomelabel" for="TallBirchForest">Tall Birch Forest</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="TallBirchHills" value="TallBirchHills" onchange="checkChecked()">
+        <label class="biomelabel" for="TallBirchHills">Tall Birch Hills</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="Swamp" value="Swamp" onchange="checkChecked()">
+        <label class="biomelabel" for="Swamp">Swamp</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="SwampHills" value="SwampHills" onchange="checkChecked()">
+        <label class="biomelabel" for="SwampHills">Swamp Hills</label></div>
+</div>
+                
+<div class="biomediv">
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="Jungle" value="Jungle" onchange="checkChecked()">
+        <label class="biomelabel" for="Jungle">Jungle</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="JungleHills" value="JungleHills" onchange="checkChecked()">
+        <label class="biomelabel" for="JungleHills">Jungle Hills</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="JungleEdge" value="JungleEdge" onchange="checkChecked()">
+        <label class="biomelabel" for="JungleEdge">Jungle Edge</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="ModifiedJungle" value="ModifiedJungle" onchange="checkChecked()">
+        <label class="biomelabel" for="ModifiedJungle">Jungle+</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="ModifiedJungleEdge" value="ModifiedJungleEdge" onchange="checkChecked()">
+        <label class="biomelabel" for="ModifiedJungleEdge">Jungle Edge+</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="BambooJungle" value="BambooJungle" onchange="checkChecked()">
+        <label class="biomelabel" for="BambooJungle">Bamboo Jungle</label></div>
+</div>
+                
+<div class="biomediv">
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="BambooJungleHills" value="BambooJungleHills" onchange="checkChecked()">
+        <label class="biomelabel" for="BambooJungleHills">Bamboo Jungle Hills</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="Savanna" value="Savanna" onchange="checkChecked()">
+        <label class="biomelabel" for="Savanna">Savanna</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="SavannaPlateau" value="SavannaPlateau" onchange="checkChecked()">
+        <label class="biomelabel" for="SavannaPlateau">Savanna Plateau</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="ShatteredSavanna" value="ShatteredSavanna" onchange="checkChecked()">
+        <label class="biomelabel" for="ShatteredSavanna">Shattered Savanna</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="ShatteredSavannaPlateau" value="ShatteredSavannaPlateau" onchange="checkChecked()">
+        <label class="biomelabel" for="ShatteredSavannaPlateau">Shattered Sav. Plat.</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="DarkForest" value="DarkForest" onchange="checkChecked()">
+        <label class="biomelabel" for="DarkForest">Dark Forest</label></div>
+</div>
+                
+<div class="biomediv">
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="DarkForestHills" value="DarkForestHills" onchange="checkChecked()">
+        <label class="biomelabel" for="DarkForestHills">Dark Forest Hills</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="MushroomFields" value="MushroomFields" onchange="checkChecked()">
+        <label class="biomelabel" for="MushroomFields">Mushroom Fields</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="MushroomFieldShore" value="MushroomFieldShore" onchange="checkChecked()">
+        <label class="biomelabel" for="MushroomFieldShore">Mushroom Field Shore</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="DripstoneCaves" value="DripstoneCaves" onchange="checkChecked()">
+        <label class="biomelabel" for="DripstoneCaves">Dripstone Caves</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="LushCaves" value="LushCaves" onchange="checkChecked()">
+        <label class="biomelabel" for="LushCaves">Lush Caves</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="NetherWastes" value="NetherWastes" onchange="checkChecked()">
+        <label class="biomelabel" for="NetherWastes">Nether Wastes</label></div>
+</div>
+                
+<div class="biomediv">
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="SoulSandValley" value="SoulSandValley" onchange="checkChecked()">
+        <label class="biomelabel" for="SoulSandValley">Soul Sand Valley</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="CrimsonForest" value="CrimsonForest" onchange="checkChecked()">
+        <label class="biomelabel" for="CrimsonForest">Crimson Forest</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="WarpedForest" value="WarpedForest" onchange="checkChecked()">
+        <label class="biomelabel" for="WarpedForest">Warped Forest</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="BasaltDeltas" value="BasaltDeltas" onchange="checkChecked()">
+        <label class="biomelabel" for="BasaltDeltas">Basalt Deltas</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="TheEnd" value="TheEnd" onchange="checkChecked()">
+        <label class="biomelabel" for="TheEnd">The End</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="SmallEndIslands" value="SmallEndIslands" onchange="checkChecked()">
+        <label class="biomelabel" for="SmallEndIslands">Small End Islands</label></div>
+</div>
+                
+<div class="biomediv">
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="EndMidlands" value="EndMidlands" onchange="checkChecked()">
+        <label class="biomelabel" for="EndMidlands">End Midlands</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="EndHighlands" value="EndHighlands" onchange="checkChecked()">
+        <label class="biomelabel" for="EndHighlands">End Highlands</label></div>
+<div class="biomeitem">
+    <input type="checkbox" name="biomes" id="EndBarrens" value="EndBarrens" onchange="checkChecked()">
+        <label class="biomelabel" for="EndBarrens">End Barrens</label></div>
+</div>
+
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div class="optionbox">
+                <p>Health <i class="optional"></i></p>
+                    <p class="description">The variant will only display in entities that match the specified health, health range, or health percentages.
+                    </p>
+                    <input type="text" id="health" placeholder="ex. 0-50%" onkeyup="getHealth()">
+            </div>
+        </td>
+        <td>
+            <div class="optionbox">
+                <p>Weather <i class="optional"></i></p>
+<p class="description">The variant will only display when the weather is:<br>
+                    &emsp;-clear: when is neither rain or a storm going on.<br>
+                    &emsp;-rain: when its raining.<br>
+                    &emsp;-thunder: when there's a storm going on.
+</p>
+                    <input type="text" id="weatherlist" placeholder="ex. clear rain thunder" onkeyup="getWeather()">
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div class="optionbox">
+                <p>Time of the day <i class="optional"></i></p>
+                    <p class="description">The variant will only display within the specified tick range of a day in Minecraft.
+                    </p>
+                    <input type="text" id="daytime" placeholder="ex. 0-24000" onkeyup="getDayTime()">
+            </div>
+        </td>
+        <td>
+            <div class="optionbox">
+                <p>Moon Phase <i class="optional"></i></p>
+                    <p class="description">The variant will only display within the specified moon phases (0-7).
+                    </p>
+                    <input type="text" id="moonphase" placeholder="ex. 0-3" onkeyup="getMoonPhase()">
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div class="optionbox">
+                <p>Baby <i class="optional"></i></p>
+                    <p class="description">The variant will only display when the entity is a baby.
+                    </p>
+                    <select name="baby" id="baby" onchange="getBaby()">
+                        <option value="" selected disabled>Select an option</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+            </div>
+        </td>
+        <td>
+            <div class="optionbox">
+                <p>Collar Colors <i class="optional"></i></p>
+                    <p class="description">The variant will only display when the collar matches the specified color(s).</p>
+                <div class="colordiv">
+                    <div class="coloritem">
+                        <input type="checkbox" name="colors" id="black" value="black" onchange="checkCheckedColor()">
+                            <label class="colorlabel" for="black" style="background-color: #07090E"></label></div>
+                    <div class="coloritem">
+                        <input type="checkbox" name="colors" id="blue" value="blue" onchange="checkCheckedColor()">
+                            <label class="colorlabel" for="blue" style="background-color: #2B2D8D"></label></div>
+                    <div class="coloritem">
+                        <input type="checkbox" name="colors" id="brown" value="brown" onchange="checkCheckedColor()">
+                            <label class="colorlabel" for="brown" style="background-color: #5E3A1F"></label></div>
+                    <div class="coloritem">
+                        <input type="checkbox" name="colors" id="cyan" value="cyan" onchange="checkCheckedColor()">
+                            <label class="colorlabel" for="cyan" style="background-color: #157585"></label></div>
+                    <div class="coloritem">
+                        <input type="checkbox" name="colors" id="gray" value="gray" onchange="checkCheckedColor()">
+                            <label class="colorlabel" for="gray" style="background-color: #35383C"></label></div>
+                    <div class="coloritem">
+                        <input type="checkbox" name="colors" id="green" value="green" onchange="checkCheckedColor()">
+                            <label class="colorlabel" for="green" style="background-color: #485A24"></label></div>
+                    <div class="coloritem">
+                        <input type="checkbox" name="colors" id="light_blue" value="light_blue" onchange="checkCheckedColor()">
+                            <label class="colorlabel" for="light_blue" style="background-color: #2588C6"></label></div>
+                    <div class="coloritem">
+                        <input type="checkbox" name="colors" id="light_gray" value="light_gray" onchange="checkCheckedColor()">
+                            <label class="colorlabel" for="light_gray" style="background-color: #7C7C72"></label></div>
+                </div>
+                
+                <div class="colordiv">
+                    <div class="coloritem">
+                        <input type="checkbox" name="colors" id="lime" value="lime" onchange="checkCheckedColor()">
+                            <label class="colorlabel" for="lime" style="background-color: #5CA618"></label></div>
+                    <div class="coloritem">
+                        <input type="checkbox" name="colors" id="magenta" value="magenta" onchange="checkCheckedColor()">
+                            <label class="colorlabel" for="magenta" style="background-color: #A72F9D"></label></div>
+                    <div class="coloritem">
+                        <input type="checkbox" name="colors" id="orange" value="orange" onchange="checkCheckedColor()">
+                            <label class="colorlabel" for="orange" style="background-color: #DD5F00"></label></div>
+                    <div class="coloritem">
+                        <input type="checkbox" name="colors" id="pink" value="pink" onchange="checkCheckedColor()">
+                            <label class="colorlabel" for="pink" style="background-color: #D3658E"></label></div>
+                    <div class="coloritem">
+                        <input type="checkbox" name="colors" id="purple" value="purple" onchange="checkCheckedColor()">
+                            <label class="colorlabel" for="purple" style="background-color: #64209B"></label></div>
+                    <div class="coloritem">
+                        <input type="checkbox" name="colors" id="red" value="red" onchange="checkCheckedColor()">
+                            <label class="colorlabel" for="red" style="background-color: #8C2020"></label></div>
+                    <div class="coloritem">
+                        <input type="checkbox" name="colors" id="white" value="white" onchange="checkCheckedColor()">
+                            <label class="colorlabel" for="white" style="background-color: #CCD1D2"></label></div>
+                    <div class="coloritem">
+                        <input type="checkbox" name="colors" id="yellow" value="yellow" onchange="checkCheckedColor()">
+                            <label class="colorlabel" for="yellow" style="background-color: #EDAD15"></label></div>
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+    </form>
+
+    
+
+<div class="resultbox" id="result">
+    <label id="lblmess0a">#Generated using Pablo's Random Entities properties generator</label>
+    <label id="lblmess0a">#More in https://pablomcprojects.github.io/pablomcprojects</label>
+<label id="lblmess0a">#Variant <span class="variantnumber" value=""> </span></label>
+    <label><span id="lblmess0" style="color:#61afef"></span><span id="val0" style="color:#ffa545"></span></label>
+    <label><span id="lblmess1" style="color:#61afef"></span><span id="val1" style="color:#ffa545"></span></label>
+    <label><span id="lblmess2" style="color:#61afef"></span><span id="val2" style="color:#ffa545"></span></label>
+    <label><span id="lblmess3" style="color:#61afef"></span><span id="val3" style="color:#ffa545"></span></label>
+    <label><span id="lblmess4" style="color:#61afef"></span><span id="val4" style="color:#ffa545"></span></label>
+    <label><span id="lblmess5" style="color:#61afef"></span><span id="val5" style="color:#ffa545"></span></label>
+    <label><span id="lblmess6" style="color:#61afef"></span><span id="val6" style="color:#ffa545"></span></label>
+    <label><span id="lblmess7" style="color:#61afef"></span><span id="val7" style="color:#ffa545"></span></label>
+    <label><span id="lblmess8" style="color:#61afef"></span><span id="val8" style="color:#ffa545"></span></label>
+    <label><span id="lblmess9" style="color:#61afef"></span><span id="val9" style="color:#ffa545"></span></label>
+    <label><span id="lblmess10" style="color:#61afef"></span><span id="val10" style="color:#ffa545"></span></label>
+    <label><span id="lblmess11" style="color:#61afef"></span><span id="val11" style="color:#ffa545"></span></label>
+    <label><span id="lblmess12" style="color:#61afef"></span><span id="val12" style="color:#ffa545"></span></label>
+</div>
+<script src="re.js"></script>
+<center><a href="https://discord.gg/MV5qYDZBdQ" target="_blank"><img style="margin: 5px" src="https://imgur.com/I0Lzsnv.png"></a></center>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
