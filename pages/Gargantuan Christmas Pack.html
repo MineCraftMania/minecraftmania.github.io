@@ -132,54 +132,123 @@ function burgerMenu() {
     </div>
 <br>
     
+<style>
+    html,body {
+        margin: 0;
+        padding: 0;
+        background-color: #22252d;
+        scroll-behavior: smooth;
+    }
+    .logobox {
+        margin: auto;
+        width: 20%;
+        text-align: center;
+    }
+    .logobox img, a {
+        width: 100%;
+        text-decoration: none;
+    }
+    .available {
+        width: 50%;
+        margin: 15px auto 0px auto;
+        display: flex;
+        cursor: pointer;
+        transition: all 0.2s ease 0s;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+    .available:hover {
+        transform: scale(1.02);
+        box-shadow: 0 0 0 4px #fd7131;
+        border-radius: 10px;
+    }
+    .available img {
+        width: 300px;
+        height: 169px;
+    }
+    h1 {
+        color: #fbfdfd;
+        font-family: 'Quicksand', sans-serif;
+        text-align: center;
+        margin: -20px 0px 15px 0px;
+        cursor: default
+    }
+    h2 {
+        color: #fbfdfd;
+        font-family: 'Quicksand', sans-serif;
+        margin: 5px 0px 0px 10px;
+    }
+    h2 {
+        color: #fbfdfd;
+        font-family: 'Quicksand', sans-serif;
+        margin: 5px 0px 0px 5px;
+    }
+    p {
+        color: #fbfdfd;
+        font-family: 'Quicksand', sans-serif;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
+    }
+    .info {
+        margin: 0;
+        padding: 0px 10px;
+        width: 100%;
+    }
+    .available a {
+        display: inherit
+    }
     
-<!-- Projects-->
-        <h1>Projects</h1>
-<div class="hr"></div>
-    <div class="projects">
-        <div class="filterbox" id="myBtnContainer">
-            <h1>Filter List</h1>
-<div class="hr2"></div>
-                <button class="btn active" onclick="filterSelection('all')">Show All</button>
-<div class="hr2"></div>
-            <h1 class="smaller">version</h1>
-                <button class="btn" onclick="filterSelection('v181')">1.18.1</button>
-                <button class="btn" onclick="filterSelection('v171')">1.17.1</button>
-                <button class="btn" onclick="filterSelection('v162')">1.16.2</button>
-                <button class="btn" onclick="filterSelection('v161')">1.16.1</button>
-<div class="hr2"></div>
-            <h1 class="smaller">requirements</h1>
-                <button class="btn" onclick="filterSelection('optifine')">Optifine</button>
-<div class="hr2"></div>
-            <h1 class="smaller">features</h1>
-                <button class="btn" onclick="filterSelection('ctm')">Connected Textures</button>
-                <button class="btn" onclick="filterSelection('cit')">Custom Items</button>
-                <button class="btn" onclick="filterSelection('models')">Custom Models</button>
-                <button class="btn" onclick="filterSelection('env')">Environment</button>
-                <button class="btn" onclick="filterSelection('sound')">Sounds</button>
-                <button class="btn" onclick="filterSelection('variety')">Variety</button>
-                <button class="btn" onclick="filterSelection('entities')">Mobs / Entities</button>
-                <button class="btn" onclick="filterSelection('gui')">GUI / HUD</button>
-                <button class="btn" onclick="filterSelection('particles')">Particles</button>
-                <button class="btn" onclick="filterSelection('exp')">Experimental</button>
-<div class="hr2"></div>
+    @media screen and (max-width: 668px) {
+        .logobox {
+            width: 50%;
+        }
+        h1 {
+            font-size: 22px;
+            margin: 0;
+            padding: 0;
+        }
+        h2 {
+            font-size: 16px;
+            margin: 0;
+            padding: 3px 0px;
+        }
+        p {
+            margin: 0; 
+            font-size: 10px;
+            -webkit-line-clamp: 4;
+        }
+        .available {
+            width: 100%;
+            margin: 5px auto 0px auto;
+        }
+        .available img {
+            width: 150px;
+            height: 85px;
+        }
+        .info {
+            padding: 0px 5px;
+        }
+    }
+    @media screen and (min-width: 668px) and (max-width: 1024px) {
+        h1 {
+            margin: 0;
+        }
+        .available {
+            width: 85%
+        }
+    }
+</style>
+
+<!-- Guide -->
+        <div class="available"><a href="http://adfoc.us/71941182062250" target="_blank">
+            <img src="images/download-gf944eb2c8_640.png">
+                <div class="info">
+<h2>CLICK HERE TO DOWNLOAD</h2>
+                </div></a>
         </div>
-        <div class="itembox">
-            <ul>
-<!--Item-->    <li class="box v162 v161 v171 v181 optifine ctm cit models env sound variety entities gui">
-                    <div class="elementbox">
-                        <a href="http://adfoc.us/71941182062250" target="_blank">
-                            <img src="images/download-gf944eb2c8_640.png">
-                            <h3>Gargantuan Christmas Pack </h3><div class="tagbox"><div class="vers">1.18</div><div class="vers">Optifine</div></div>
-<p>DOWNLOAD HERE !</p>
-
-                        </a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-
-
     
     
     
