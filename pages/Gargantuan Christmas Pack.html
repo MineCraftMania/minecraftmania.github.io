@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Bidvertiser2061927 -->
+    
+    
+    <!-- Primary Meta Tags -->
+<title>MineCraftMania Resources | Portfolio</title>
+<meta name="title" content="MineCraftMania Resources  | Portfolio">
+<meta name="description" content="The website where you can check all my projects, guides and more :)">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://pablomcprojects.neocities.org">
+<meta property="og:title" content="MineCraftMania Resources  | Portfolio">
+<meta property="og:description" content="The website where you can check all my projects, guides and more :)">
+<meta property="og:image" content="https://imgur.com/a/sJPjY3E">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="pablomcprojects.neocities.org">
+<meta property="twitter:title" content="MineCraftMania Resources | Portfolio">
+<meta property="twitter:description" content="The website where you can check all my projects, guides and more :)">
+<meta property="twitter:image" content="https://imgur.com/a/sJPjY3E">
+    
+<!-- Misc -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="https://imgur.com/ttNJWCC.png" />
+
+<!-- Import Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    
+<!-- Stylesheets-->
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="queries.css">
+<style>
+.bug {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        width: 150px;
+        text-align: center;
+        color: #FFF;
+        font-weight: bold;
+    }
+    .bugbutton {
+        width: 100px;
+        border-radius: 200px;
+        height: 100px;
+        background: rgb(239,49,40);
+        background: linear-gradient(45deg, rgba(239,49,40,1) 0%, rgba(253,113,49,1) 100%);
+        margin: auto;
+        transition: all 0.2s ease 0s;
+    }
+    .bugbutton img {
+        width: 80%;
+        margin-top: 10px
+    }
+    
+    .bug:hover .bugbutton {
+        transform: scale(0.95)
+    }    
+</style>
+</head>
+
+<body>
+<!-- Navigation Bar-->
+    <header id="sticky">
+        <a href="index.html"><img class="logonav" id="logo" src="images/logo2.png"></a>
+        <nav>
+            <ul class="navlist">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="guides.html">Resources</a></li>
+            </ul>
+        </nav>
+        <a href=""><button class="contactbtn">&nbsp;</button></a>
+    </header>
+<script>
+var sticky = document.getElementById('sticky');
+
+window.addEventListener('scroll', function(){
+    
+    if (window.pageYOffset > 65) {
+        
+        sticky.classList.add('fixed');
+        document.getElementById('logo').src = 'images/logo.png';
+    }
+    else {
+        sticky.classList.remove('fixed');
+        document.getElementById('logo').src = 'images/logo2.png';
+    }
+})
+</script>
+<div class="bug"><a href="https://github.com/MineCraftMania" target="_blank" style="text-decoration: none"><div class="bugbutton"><img src="https://imgur.com/4zx4WCI.png"></div><p style="text-align: center; font-size: 18px">Report bugs</p></a></div>
+
+<!-- Mobile Navigation Bar -->
+<div class="topnav">
+  <a href="index.html" class="active2"><img class="logonav2" src="images/logo2.png"></a>
+  <div id="myLinks">
+    <a href="#home">Home</a>
+    <a href="#projects">Projects</a>
+    <a href="#about">About</a>
+    <a href="guides.html">Resources</a>
+  </div>
+    <a href="javascript:void(0);" class="icon" onclick="burgerMenu()"><img src="images/burger.png"></a>
+</div>
+<script>
+function burgerMenu() {
+    var x = document.getElementById("myLinks");
+
+    if (x.style.display === "block") {
+        x.style.display = "none";
+    }
+    else {
+        x.style.display = "block";
+    }
+}
+
+</script>
+    
+<!-- Welcome Screen-->
+    <div class="welcomescreen" id="home">
+        <img src="images/welcome.png">
+        <h2>This is the official portfolio for all of my content</h2>
+<p id="projects"><span class="highlight">&#11167;&emsp;</span> scroll down to see my projects <span class="highlight">&emsp;&#11167;</span></p>
+    </div>
+<br>
+    
+    
+<!-- Projects-->
+        <h1>Projects</h1>
+<div class="hr"></div>
+    <div class="projects">
+        <div class="filterbox" id="myBtnContainer">
+            <h1>Filter List</h1>
+<div class="hr2"></div>
+                <button class="btn active" onclick="filterSelection('all')">Show All</button>
+<div class="hr2"></div>
+            <h1 class="smaller">version</h1>
+                <button class="btn" onclick="filterSelection('v181')">1.18.1</button>
+                <button class="btn" onclick="filterSelection('v171')">1.17.1</button>
+                <button class="btn" onclick="filterSelection('v162')">1.16.2</button>
+                <button class="btn" onclick="filterSelection('v161')">1.16.1</button>
+<div class="hr2"></div>
+            <h1 class="smaller">requirements</h1>
+                <button class="btn" onclick="filterSelection('optifine')">Optifine</button>
+<div class="hr2"></div>
+            <h1 class="smaller">features</h1>
+                <button class="btn" onclick="filterSelection('ctm')">Connected Textures</button>
+                <button class="btn" onclick="filterSelection('cit')">Custom Items</button>
+                <button class="btn" onclick="filterSelection('models')">Custom Models</button>
+                <button class="btn" onclick="filterSelection('env')">Environment</button>
+                <button class="btn" onclick="filterSelection('sound')">Sounds</button>
+                <button class="btn" onclick="filterSelection('variety')">Variety</button>
+                <button class="btn" onclick="filterSelection('entities')">Mobs / Entities</button>
+                <button class="btn" onclick="filterSelection('gui')">GUI / HUD</button>
+                <button class="btn" onclick="filterSelection('particles')">Particles</button>
+                <button class="btn" onclick="filterSelection('exp')">Experimental</button>
+<div class="hr2"></div>
+        </div>
+        <div class="itembox">
+            <ul>
+<!--Item-->    <li class="box v162 v161 v171 v181 optifine ctm cit models env sound variety entities gui">
+                    <div class="elementbox">
+                        <a href="pages/guides.html" target="_blank">
+                            <img src="images/thumbnails/oie_zJKtZiETdX2q.png">
+                            <h3>Gargantuan Christmas Pack </h3><div class="tagbox"><div class="vers">1.18</div><div class="vers">Optifine</div></div>
+<p>Made A Full Christmas Pack For The Most Magical Time Of The Year ENJOY:) </p>
+                        </a>
+                    </div>
+                </li>                
+<!--Item-->    <li class="box v162 v161 v171 optifine models exp">
+                    <div class="elementbox">
+                        <a href="http://adfoc.us/69950181348812" target="_blank">
+                            <img src="https://imgur.com/fxqPT0u.png">
+                            <h3>HarvestMe Reloaded </h3><div class="tagbox"><div class="vers">1.17</div></div>
+<p>Reworked resourcepack that adds a custom indicator that alerts when a crop is fully grown, works on all crops and sweet berry bushes.</p>
+                        </a>
+                    </div>
+                </li>
+<!--Item-->    <li class="box v162 v161 optifine models exp">
+                    <div class="elementbox">
+                        <a href="http://adfoc.us/69950181124399" target="_blank">
+                            <img src="images/thumbnails/harvest.png">
+                            <h3>HarvestMe Indicators </h3><div class="tagbox"><div class="vers">1.16</div><div class="vers">Optifine</div></div>
+<p>This resourcepack uses a custom indicator that alerts when a crop is fully grown, works on all crops and sweet berry bushes.</p>
+                        </a>
+                    </div>
+                </li>
+<!--Item-->    <li class="box v162 v161 optifine models variety entities">
+                    <div class="elementbox">
+                        <a href="https://www.curseforge.com/minecraft/texture-packs/pablos-better-babies" target="_blank">
+                            <img src="images/thumbnails/babies.png">
+                            <h3>Better Babies</h3><div class="tagbox"><div class="vers">1.16</div><div class="vers">Optifine</div></div>
+<p>This resourcepack replaces the baby mob textures with more cute looking ones, also changes the chicken model.</p>
+                        </a>
+                    </div>
+                </li>
+<!--Item-->    <li class="box v162 v161 variety">
+                    <div class="elementbox">
+                        <a href="https://www.curseforge.com/minecraft/texture-packs/pablos-better-paintings" target="_blank">
+                            <img src="images/thumbnails/paint.png">
+                            <h3>Better Paintings</h3><div class="tagbox"><div class="vers">1.16</div></div>
+<p>This resourcepack replaces all paintings with more popular art pieces from around the world.</p>
+                        </a>
+                    </div>
+                </li>
+<!--Item-->    <li class="box v162 v161 optifine ctm env">
+                    <div class="elementbox">
+                        <a href="https://www.curseforge.com/minecraft/texture-packs/pablos-thriving-grass" target="_blank">
+                            <img src="images/thumbnails/grass.png">
+                            <h3>Thriving Grass</h3><div class="tagbox"><div class="vers">1.16</div><div class="vers">Optifine</div></div>
+<p>This resourcepack adds grass overlays for almost all blocks, creating a less contrasting look between blocks around grass.</p>
+                        </a>
+                    </div>
+                </li>
+<!--Item-->    <li class="box v162 v161 optifine env sound cit">
+                    <div class="elementbox">
+                        <a href="https://www.curseforge.com/minecraft/texture-packs/pablos-immersive-vanilla" target="_blank">
+                            <img src="images/thumbnails/vanilla.png">
+                            <h3>Immersive Vanilla</h3><div class="tagbox"><div class="vers">1.16</div><div class="vers">Optifine</div></div>
+<p>Immersive Vanilla is a project I started focusing on improving the vanilla look of Minecraft.</p>
+                        </a>
+                    </div>
+                </li>
+<!--Item-->    <li class="box v162 v161 gui">
+                    <div class="elementbox">
+                        <a href="https://www.curseforge.com/minecraft/texture-packs/pablos-hud-icons" target="_blank">
+                            <img src="images/thumbnails/hud.png">
+                            <h3>HUD Icons</h3><div class="tagbox"><div class="vers">1.16</div></div>
+<p>This resourcepack uses a custom language file to display information when hovering certain items in your inventory.</p>
+                        </a>
+                    </div>
+                </li>
+<!--Item-->    <li class="box v162 v161 gui">
+                    <div class="elementbox">
+                        <a href="https://www.curseforge.com/minecraft/texture-packs/pablos-colorping" target="_blank">
+                            <img src="images/thumbnails/ping.png">
+                            <h3>Color Ping</h3><div class="tagbox"><div class="vers">1.16</div></div>
+<p>This resourcepack adds color to the ping indicator in the multiplayer menu.</p>
+                        </a>
+                    </div>
+                </li>
+<!--Item-->    <li class="box v162 v161 optifine ctm variety">
+                    <div class="elementbox">
+                        <a href="https://www.curseforge.com/minecraft/texture-packs/pablos-linear-planks" target="_blank">
+                            <img src="images/thumbnails/planks.png">
+                            <h3>Linear Planks</h3><div class="tagbox"><div class="vers">1.16</div><div class="vers">Optifine</div></div>
+<p>This resourcepack uses connected textures to allow planks to interact with eachother. Some have priority over others.</p>
+                        </a>
+                    </div>
+                </li>
+<!--Item-->    <li class="box gui v162 v161">
+                    <div class="elementbox">
+                        <a href="https://www.curseforge.com/minecraft/texture-packs/darkmode-chocolate-gui" target="_blank">
+                            <img src="images/thumbnails/gui.png">
+                            <h3>Darkmode ChocoGUI</h3><div class="tagbox"><div class="vers">1.16</div></div>
+<p>This resourcepack makes the GUI look more simple and stylized, inspired by the main menu classic button style.</p>
+                        </a>
+                    </div>
+                </li>
+<!--Item-->    <li class="box v161 optifine cit variety">
+                    <div class="elementbox">
+                        <a href="https://www.curseforge.com/minecraft/texture-packs/pablos-battle-axes" target="_blank">
+                            <img src="images/thumbnails/axe.png">
+                            <h3>Battle Axes</h3><div class="tagbox"><div class="vers">1.16</div><div class="vers">Optifine</div></div>
+<p>This resourcepack is for those who use axes as a weapon, it adds the option to change the axe texture into a battle axe.</p>
+                        </a>
+                    </div>
+                </li>
+<!--Item-->    <li class="box v161 v162 optifine cit variety">
+                    <div class="elementbox">
+                        <a href="https://www.curseforge.com/minecraft/texture-packs/pablos-secret-nametags" target="_blank">
+                            <img src="images/thumbnails/tags.png">
+                            <h3>Secret Nametags</h3><div class="tagbox"><div class="vers">1.16</div><div class="vers">Optifine</div></div>
+<p>This resourcepack adds custom item textures for the renamed secret nametags.</p>
+                        </a>
+                    </div>
+                </li>
+<!--Item-->    <li class="box v161 v162 cit">
+                    <div class="elementbox">
+                        <a href="https://www.curseforge.com/minecraft/texture-packs/pablos-shimmering-items" target="_blank">
+                            <img src="images/thumbnails/shimmer.png">
+                            <h3>Shimmering Items</h3><div class="tagbox"><div class="vers">1.16</div></div>
+<p>This resourcepack adds an animated glint to several items.</p>
+                        </a>
+                    </div>
+                </li>
+<!--Item-->    <li class="box v162 v161 optifine ctm models env variety">
+                    <div class="elementbox">
+                        <a href="https://www.curseforge.com/minecraft/texture-packs/pablos-biome-torches" target="_blank">
+                            <img src="images/thumbnails/torch.png">
+                            <h3>Biome Torches</h3><div class="tagbox"><div class="vers">1.16</div><div class="vers">Optifine</div></div>
+<p>This resourcepack adds more torch variants depending on the biome they are placed on.</p>
+                        </a>
+                    </div>
+                </li>
+<!--Item-->    <li class="box v162 v161 particles">
+                    <div class="elementbox">
+                        <a href="https://www.curseforge.com/minecraft/texture-packs/pablos-better-particles" target="_blank">
+                            <img src="images/thumbnails/particle.png">
+                            <h3>Better Particles</h3><div class="tagbox"><div class="vers">1.16</div></div>
+<p>This resourcepack retouches some particles.</p>
+                        </a>
+                    </div>
+                </li>
+<!--Item-->    <li class="box v162 v161 optifine entities environment variety">
+                    <div class="elementbox">
+                        <a href="https://www.curseforge.com/minecraft/texture-packs/pablos-chameleon-creepers" target="_blank">
+                            <img src="images/thumbnails/creepers.png">
+                            <h3>Chameleon Creepers </h3><div class="tagbox"><div class="vers">1.16</div><div class="vers">Optifine</div></div>
+<p>This resourcepack replaces the creeper textures with ones that blend more with the environment.</p>
+                        </a>
+                    </div>
+                </li>
+<!--Item-->    <li class="box v162 v161 optifine variety entities">
+                    <div class="elementbox">
+                        <a href="https://www.curseforge.com/minecraft/texture-packs/pablos-more-mob-breeds" target="_blank">
+                            <img src="images/thumbnails/pig.png">
+                            <h3>More Mob Breeds</h3><div class="tagbox"><div class="vers">1.16</div><div class="vers">Optifine</div></div>
+<p>This resourcepack uses random entities to add some variety to pigs, cows and chickens.</p>
+                        </a>
+                    </div>
+                </li>
+<!--Item-->    <li class="box v162 v161 optifine ctm variety">
+                    <div class="elementbox">
+                        <a href="https://www.curseforge.com/minecraft/texture-packs/pablos-linear-bricks" target="_blank">
+                            <img src="images/thumbnails/bricks.png">
+                            <h3>Linear Bricks I</h3><div class="tagbox"><div class="vers">1.16</div><div class="vers">Optifine</div></div>
+<p>This resourcepack uses connected textures to allow bricks, nether bricks, and red nether bricks to interact with eachother.</p>
+                        </a>
+                    </div>
+                </li>
+<!--Item-->    <li class="box v162 v161 optifine ctm variety">
+                    <div class="elementbox">
+                        <a href="https://www.curseforge.com/minecraft/texture-packs/pablos-linearbricks-2" target="_blank">
+                            <img src="images/thumbnails/bricks2.png">
+                            <h3>Linear Bricks II</h3><div class="tagbox"><div class="vers">1.16</div><div class="vers">Optifine</div></div>
+<p>This resourcepack uses connected textures to allow endstone bricks, quartz bricks, stonebricks and blackstone bricks to interact with eachother.</p>
+                        </a>
+                    </div>
+                </li>
+<!--Item-->    <li class="box v161 v162 optifine cit variety">
+                    <div class="elementbox">
+                        <a href="https://www.curseforge.com/minecraft/texture-packs/pablos-descriptive-books" target="_blank">
+                            <img src="images/thumbnails/book.png">
+                            <h3>Descriptive Books</h3><div class="tagbox"><div class="vers">1.16</div><div class="vers">Optifine</div></div>
+<p>This resourcepack adds custom textures for enchanted books depending the enchantment they have, works better with one enchantment per book.</p>
+                        </a>
+                    </div>
+                </li>
+<!--Item-->    <li class="box v162 v161 optifine models exp">
+                    <div class="elementbox">
+                        <a href="https://www.curseforge.com/minecraft/texture-packs/pablos-bettercarpets" target="_blank">
+                            <img src="images/thumbnails/carpet.png">
+                            <h3>Better Carpets</h3><div class="tagbox"><div class="vers">1.16</div><div class="vers">Optifine</div></div>
+<p>This resourcepack makes carpets follow both slabs and stairs model's shapes, allowing to place them on top without them just floating.</p>
+                        </a>
+                    </div>
+                </li>
+<!--Item-->    <li class="box v162 v161 optifine ctm env">
+                    <div class="elementbox">
+                        <a href="https://www.curseforge.com/minecraft/texture-packs/pablos-connectedblocks" target="_blank">
+                            <img src="images/thumbnails/conn.png">
+                            <h3>ConnectedBlocks</h3><div class="tagbox"><div class="vers">1.16</div><div class="vers">Optifine</div></div>
+<p>This resourcepack makes some blocks connect smooth and seamless for a better overall experience.</p>
+                        </a>
+                    </div>
+                </li>
+<!--Item-->    <li class="box v162 v161 optifine models exp">
+                    <div class="elementbox">
+                        <a href="https://www.curseforge.com/minecraft/texture-packs/pablos-chest-tags" target="_blank">
+                            <img src="images/thumbnails/chest.png">
+                            <h3>Chest Tags</h3><div class="tagbox"><div class="vers">1.16</div><div class="vers">Optifine</div></div>
+<p>This resourcepack enhances the use of item frames in order to help you you organize your chests in Minecraft.</p>
+                        </a>
+                    </div>
+                </li>
+<!--Item-->    <li class="box v162 v161 models variety env">
+                    <div class="elementbox">
+                        <a href="https://www.curseforge.com/minecraft/texture-packs/pablos-3d-addons" target="_blank">
+                            <img src="images/thumbnails/3d.png">
+                            <h3>3D Addons</h3><div class="tagbox"><div class="vers">1.16</div></div>
+<p>This resourcepack features several 3D models for some blocks, mostly work stations.</p>
+                        </a>
+                    </div>
+                </li>
+<!--Item-->    <li class="box v162 v161 models variety">
+                    <div class="elementbox">
+                        <a href="https://www.curseforge.com/minecraft/texture-packs/pablos-modern-redstone" target="_blank">
+                            <img src="images/thumbnails/redstone.png">
+                            <h3>Modern Redstone</h3><div class="tagbox"><div class="vers">1.16</div></div>
+<p>This resourcepack changes how some redstone components display, giving it a modern or cable look.</p>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+<script src="filtering.js"></script>
+    
+    </div>
+
+    <div class="hr" id="about"></div>
+    
+<!-- About-->
+    <h1>About</h1>
+<div class="about">
+    
+     <h2>Where to find me?</h2>
+    <p class="descriptiontxt">You can find me in the following social media:</p>
+    <div class="smlist">
+<a href="https://discord.com/invite/rPFbbndFrG" target="_blank"><div><img src="images/discord.png">&nbsp;Discord</div></a>
+<a href="https://www.reddit.com/user/PabloMCProjects" target="_blank"><div><img src="images/reddit.png">&nbsp;Reddit</div></a>
+<a href="https://www.planetminecraft.com/member/pablooo_pp/" target="_blank"><div><img src="images/pmc.png">&nbsp;Planet Minecraft</div></a>
+<a href="https://www.curseforge.com/members/pabloo_pp/projects" target="_blank"><div><img src="images/curseforge.png">&nbsp;CurseForge</div></a>
+<a href="https://www.instagram.com/pablomcprojects/" target="_blank"><div><img src="images/instagram.png">&nbsp;Instagram</div></a>
+<a href="https://www.youtube.com/channel/UC9pwnRf30_su15TXjE9euxQ" target="_blank"><div><img src="images/yt.png">&nbsp;YouTube</div></a>
+    </div>
+    
+    <h2>How to support my work?</h2>
+    <p class="descriptiontxt">If you wish to support my work, there are several ways to do it; one way is with the use of referrals and codes, which give me a commission everytime someone is referred with them, another way is making use of direct donations.</p>
+    
+    <div class="referrals">
+        
+        <h2 style="text-decoration: none">Coinbase</h2>
+    <p class="descriptiontxt2">
+        Coinbase is a secure platform that makes it easy to buy, sell, and store cryptocurrency like Bitcoin, Ethereum, and more. <b>I personally tried this website</b> and I can assure you it's the best crypto market for beginners. They offer you information about new tokens and after taking a quiz, you're rewarded with $3 to invest in the coin of your choice. <b>You must be +18 to use this service.</b>
+    </p>
+        <a href="https://www.coinbase.com/join/fernan_5fd1" target="_blank"><img src="images/referral1.png"></a>
+        
+        <h2 style="text-decoration: none">AdFocus</h2>
+    <p class="descriptiontxt2">
+        AdFocus is a free short URL redirection service with a twist. Get paid for links you share on the internet. You probably noticed I use this service to generate a bit of revenue everytime someone clicks certain links, while the pay rate is not as high as their competitors, they are very professional and stable. The CPM varies from country to country. Make sure you check their Terms &amp; Conditions, if you break their rules or use this service unfaithfully you may be penalized.
+    </p>
+        <a href="http://adfoc.us/?refid=699501" target="_blank"><img src="images/referral2.png"></a>
+        
+        <h2 style="text-decoration: none">PayPal</h2>
+    <p class="descriptiontxt2">
+        Not much else to say, everyone knows PayPal. There's an option to donate $1, $3, $5 or set your desired ammount, this is the more straightforward method of supporting me :&#41;
+    </p>
+
+    <form action="https://www.paypal.com/donate" method="post" target="_top">
+        <input type="hidden" name="hosted_button_id" value="X8RME4VKYKZKQ" />
+        <input type="image" src="images/donate.png" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+        <img alt="" border="0" src="https://www.paypal.com/en_ES/i/scr/pixel.gif" width="1" height="1" />
+    </form>
+
+    </div>
+</div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</body>
+</html>
