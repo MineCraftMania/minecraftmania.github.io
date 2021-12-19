@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Primary Meta Tags -->
+<title>Pablo's Minecraft Guides | Getting Started</title>
+<meta name="title" content="Pablo's Minecraft Guides | Getting Started">
+<meta name="description" content="Learn how to set your files and folders to start creating your own resourcepacks for Minecraft.">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://pablomcprojects.neocities.org">
+<meta property="og:title" content="Pablo's Minecraft Guides | Getting Started">
+<meta property="og:description" content="Learn how to set your files and folders to start creating your own resourcepacks for Minecraft.">
+<meta property="og:image" content="https://imgur.com/oquaZXc.png">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="pablomcprojects.neocities.org">
+<meta property="twitter:title" content="Pablo's Minecraft Guides | Getting Started">
+<meta property="twitter:description" content="Learn how to set your files and folders to start creating your own resourcepacks for Minecraft.">
+<meta property="twitter:image" content="https://imgur.com/oquaZXc.png">
+    
+<!-- Misc -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="https://imgur.com/ttNJWCC.png" />
+
+<!-- Import Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Mono&family=Quicksand:wght@500&display=swap" rel="stylesheet">
+
+<!-- Import Stylesheets -->
+<link rel="stylesheet" href="guides.css">
+</head>
+<body>
+<div class="content">
+    <h1 class="center">Getting Started</h1>
+    <div class="navigation">
+            <h4 class="center">Content table</h4>
+        <div>
+            <a class="idgo" href="#section1">Extracting the base files</a>
+            <a class="idgo" href="#section2">Setting up the templates pack</a>
+        </div>
+    </div>
+    
+    <h1 class="center" id="section1">Extracting the base files</h1>
+    <p class="normaltext v">To set up our workspace we need to extract the base game files. To access the game installation directory, you can press Windows Key (&plusb;) + R, then type <mark>%AppData%</mark> and hit Enter. Alternatively, you can search for <mark>%AppData%</mark> or manually go to <mark>C:\Users\(your user)\AppData\Roaming\.minecraft</mark></p>
+    <p class="normaltext justify">Once you are in <mark>.minecraft</mark> you will see a folder called <mark>versions</mark>, you  have to open it and decide what version you're making your pack for, then open the folder with the one you picked, in my case I'll be making it for the 1.17.1 version. Once you open it you'll see two files, a <mark>.jar</mark>, and a <mark>.json</mark>, you need to open the <mark>.jar</mark> file using a file archiver, in my case I'm using <a class="link" href="https://www.7-zip.org/" target="_blank">7-Zip</a> which is free and easy to install.</p>
+    <div class="img"><img src="images/a.png"></div>
+    <p class="normaltext justify">You need to extract the <mark>assets</mark> folder somewhere in your computer (like the desktop), you can do this by clicking and dragging out of the compressed folder. Congratulations! You extracted the game files!</p>
+    
+    <h1 class="center" id="section2">Setting up the templates pack</h1>
+    <p class="normaltext justify">The way I like to start is by using the game files you extracted earlier as a template for my future packs, to do this you need to go inside the <mark>.minecraft</mark> folder, then go to the <mark>resourcepacks</mark> folder. Create a new folder and name it "Base" or "Template" or whatever you prefer. Inside of that folder, paste the <mark>assets</mark> folder you extracted before, then create a new text file and open it with a raw text editor (like notepad, although I highly recommend <a class="link" href="https://notepad-plus-plus.org/downloads/" target="_blank">Notepad++</a>), in this document, copy and paste the following code:</p>
+<pre class="code">{
+  "pack": {
+    "pack_format": <span class="value">0</span>,
+    "description": "<span class="value">description</span>"
+  }
+}</pre>
+    <p class="normaltext justify">Once you pasted it, you need to replace <mark>0</mark> with the version code you're making you pack for, the codes are:</p>
+    <ul>
+        <li><mark>1</mark> for versions 1.6.1 - 1.8.9</li>
+        <li><mark>2</mark> for versions 1.9 - 1.10.2</li>
+        <li><mark>3</mark> for versions 1.11 - 1.12.2</li>
+        <li><mark>4</mark> for versions 1.13 - 1.14.4</li>
+        <li><mark>5</mark> for versions 1.15 - 1.16.1</li>
+        <li><mark>6</mark> for versions 1.16.2 - 1.16.5</li>
+        <li><mark>7</mark> for version 1.17</li>
+        <li><mark>8</mark> for version 1.18</li>
+    </ul>
+    <p class="normaltext justify">After you've changed that, you can edit the description by replacing <mark>description</mark> with whatever you desire, note that is possible to use <a class="link" href="https://minecraft.fandom.com/wiki/Formatting_codes#Use_in_server.properties_and_pack.mcmeta" target="_blank">color</a> and symbols, to use symbols you use <mark>\u####</mark>, replace <mark>####</mark> with the hex code of the symbol, here's a <a class="link" href="https://www.toptal.com/designers/htmlarrows/" target="_blank">list of symbols</a> you can use. When you do this, save it as <mark>pack.mcmeta</mark>, make sure the extension is <mark>.mcmeta</mark> and not <mark>.txt</mark></p>
+    <p class="normaltext justify">This step is optional, but Minecraft also allows for you to add a thumbnail for your pack, it must be a picture named <mark>pack.png</mark> and works with any 1:1 resolution, although a dimension of 128x128 px will display pixel perfect.</p>
+    <p class="normaltext justify">With this done, the structure of your folder should look like this:</p>
+    <div class="directory">.minecraft</div>
+        <div class="directory pads1">resourcepacks</div>
+            <div class="directory2 pad2">assets</div>
+            <div class="directory2 pad2">pack.mcmeta</div>
+            <div class="directory pads2">&ensp;pack.png <i>(Optional)</i></div>
+    
+    <p class="normaltext justify">Now go to <mark>assets</mark>/<mark>minecraft</mark> and you should see the following folders:</p>
+    
+    <div class="directory">minecraft</div>
+        <div class="directory2 pad1">blockstates</div>
+        <div class="directory2 pad1">font</div>
+        <div class="directory2 pad1">lang</div>
+        <div class="directory pads1">&ensp;models</div>
+            <div class="directory2 pad3">block</div>
+            <div class="directory pads3">&ensp;item</div>
+        <div class="directory2 pad1">particles</div>
+        <div class="directory2 pad1">texts</div>
+        <div class="directory2 pad1">sounds*</div>
+        <div class="directory2 pad1">textures</div>
+            <div class="directory2 pad3">block</div>
+            <div class="directory2 pad3">colormap</div>
+            <div class="directory2 pad3">effect*</div>
+            <div class="directory2 pad3">entity</div>
+            <div class="directory2 pad3">environment</div>
+            <div class="directory2 pad3">font</div>
+            <div class="directory2 pad3">gui</div>
+            <div class="directory2 pad3">item</div>
+            <div class="directory2 pad3">map</div>
+            <div class="directory2 pad3">misc</div>
+            <div class="directory2 pad3">mob_effect</div>
+            <div class="directory2 pad3">models</div>
+            <div class="directory2 pad3">painting</div>
+            <div class="directory pads3">&ensp;particle</div>
+    <p class="normaltext justify">Each one of these folders modifies the following graphic aspects of the game:</p>
+        <ul class="expanded">
+            <li><mark>blockstates:</mark> block models use a JSON file to determine variants to use under certain conditions.</li>
+            <li><mark>font:</mark> contains a configuration file to specify some font behaviors.</li>
+            <li><mark>lang:</mark> contains the language translation files.</li>
+            <li><mark>models</mark></li>
+                <li class="paddingleftlist"><mark>block:</mark> contains the block models that render into the world.</li>
+                <li class="paddingleftlist"><mark>item:</mark> contains the item models that render in your hand, item frames, etc.</li>
+            <li><mark>particles:</mark> contains the configuration files that control particle frames.</li>
+            <li><mark>texts:</mark> contains the credits, end, and main title splash texts.</li>
+            <li><mark>sounds*:</mark> this folder is not generated by default, should contain all the custom sounds.</li>
+            <li><mark>textures</mark></li>
+                <li class="paddingleftlist"><mark>block:</mark> contains the block textures.</li>
+                <li class="paddingleftlist"><mark>colormap:</mark> contains the colormap textures used to tint grass, foliage, etc.</li>
+                <li class="paddingleftlist"><mark>effect* (unused)</mark></li>
+                <li class="paddingleftlist"><mark>entity:</mark> contains the entity and tile entity textures.</li>
+                <li class="paddingleftlist"><mark>environment:</mark> contains environment textures such as the sun, moon, weather, etc.</li>
+                <li class="paddingleftlist"><mark>font:</mark> contains all the font maps and glyphs used.</li>
+                <li class="paddingleftlist"><mark>item:</mark> contains the item textures.</li>
+                <li class="paddingleftlist"><mark>map:</mark> contains the map, waypoints, and markers textures.</li>
+                <li class="paddingleftlist"><mark>misc:</mark> contains miscellaneous textures such as the pumpkin overlay or spyglass scope.</li>
+                <li class="paddingleftlist"><mark>mob_effect:</mark> contains the status effect icons (speed, health boost, etc).</li>
+                <li class="paddingleftlist"><mark>models:</mark> contains the armor textures.</li>
+                <li class="paddingleftlist"><mark>painting:</mark> contains the painting textures.</li>
+                <li class="paddingleftlist"><mark>particle:</mark> contains all the particle texture files.</li>
+        </ul>
+    <p class="normaltext justify">Great! Now you only have to make a new folder in <mark>.minecraft</mark>/<mark>resourcepacks</mark> and name it however you want your pack to be named, then proceed to create a <mark>pack.mcmeta</mark> file like before. At this point, you can copy all the elements you want to modify from the template folder to your pack folder, for example; if I want to modify the bookshelf model, I'll go to the template pack, then look for the models folder and copy <mark>bookshelf.json</mark> into my new pack keeping the folder structure the same.</p>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

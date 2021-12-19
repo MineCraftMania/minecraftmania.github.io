@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Mono&family=Quicksand:wght@500&display=swap" rel="stylesheet">
+    
+<link rel="icon" type="image/png" href="https://imgur.com/ttNJWCC.png" />
+<style>
+    html,body {
+        margin: 0;
+        padding: 0;
+        background-color: #15161A;
+    }
+    .content {
+        width: 100%;
+        margin: auto;
+        height: 1380px;
+    }
+    form {
+        width: 70%;
+        margin: auto;
+        background-color: #22252D;
+        color: #fff;
+        font-family: sans-serif;
+        padding: 10px;
+    }
+    p {
+        display: inline-block;
+        width: 90%;;
+        margin: 5px 0px 5px 0px;
+        font-size: 24px;
+        font-family: 'Quicksand', sans-serif;
+    }
+    h1 {
+        font-size: 26px;
+        font-family: 'Quicksand', sans-serif;
+        text-align: center;
+        text-decoration: underline
+    }
+    .resultbox {
+        border: 3px solid #f3502c;
+        border-radius: 10px;
+        background-color: #16171D;
+        width: 80%;
+        margin: 20px auto 0px auto;
+        padding: 10px 10px 10px 10px;
+        font-family: 'Quicksand', sans-serif;
+        font-size: 14px;
+        color: #fff;
+    }
+    select {
+        appearance: none;
+        padding: 0px 0px 0px 8px;
+        width: 260px;
+        height: 28px;
+        font-family: 'Quicksand', sans-serif;
+        background: rgb(57,63,66);
+        background: linear-gradient(180deg, rgba(57,63,66,1) 0%, rgba(47,50,58,1) 100%);
+        border-radius: 10px;
+        transition: all 0.2s ease 0s;
+        color: #fff;
+        font-size: 16px;
+        border: none;
+        outline: 0;
+    }
+    select:focus, select:hover {
+        border-radius: 10px 10px 0px 0px;
+        width: 280px;
+    }
+    option {
+        background: #15161A;
+    }
+    input {
+        width: 250px;
+        height: 20px;
+        font-family: 'Quicksand', sans-serif;
+        border-radius: 10px;
+        border: none;
+        outline: 0;
+        height: 25px;
+        padding: 0px 0px 0px 8px;
+        background: rgb(57,63,66);
+        background: linear-gradient(180deg, rgba(57,63,66,1) 0%, rgba(47,50,58,1) 100%);
+        font-size: 16px;
+        color: #fff;
+        transition: all 0.2s ease 0s;
+        margin-left: -10px;
+    }
+    input:focus, input:hover {
+        width: 275px;
+    }
+    .optionbox {
+        width: 100%;
+        margin: 0px 0px 15px 0px;
+    }
+    #expandable {
+        display: none;
+    }
+    label {
+        display: block;
+        cursor: text;
+    }
+    .description {
+        display: block;
+        margin: 0px 0px 5px 0px;
+        padding: 0px 20px 0px 20px;
+        width: 90%;
+        font-size: 14px;
+        font-family: 'Quicksand', sans-serif;
+        text-align: justify;
+        color: #888d97
+    }
+    .organizer {
+        width: 100%;
+        margin: 0px 0px 20px 0px;
+        padding: 0;
+        text-align: center
+    }
+    .organizer tr td {
+        width: 50%;
+        vertical-align:top ;
+    }
+    option[disabled] {
+        text-align: center;
+    }
+    .center {
+        text-align: center;
+    }
+    h2, h3 {
+        text-align: center;
+        font-family: 'Quicksand', sans-serif;
+        margin: 0;
+    }
+    h2 {
+        font-size: 40px;
+    }
+    #lblmess0a {
+        color: #5C6370
+    }
+    .required::after { 
+        content: "(Required)";
+        font-size: 14px;
+        color: #e84c2a;
+        font-weight: bold;
+    }
+    .optional::after { 
+        content: "(Optional)";
+        font-size: 14px;
+        color: #e84c2a;
+    }
+    a {
+        color: inherit;
+    }
+    .bug {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        width: 150px;
+        text-align: center;
+        color: #FFF;
+        font-weight: bold;
+    }
+    .bugbutton {
+        width: 100px;
+        border-radius: 200px;
+        height: 100px;
+        background: rgb(239,49,40);
+        background: linear-gradient(45deg, rgba(239,49,40,1) 0%, rgba(253,113,49,1) 100%);
+        margin: auto;
+        transition: all 0.2s ease 0s;
+    }
+    .bugbutton img {
+        width: 80%;
+        margin-top: 10px
+    }
+    
+    .bug:hover .bugbutton {
+        transform: scale(0.95)
+    }
+</style>
+</head>
+<body>
+<div class="bug"><a href="https://github.com/pablomcprojects/pablomcprojects.github.io/issues" target="_blank" style="text-decoration: none"><div class="bugbutton"><img src="https://imgur.com/4zx4WCI.png"></div><p style="text-align: center; font-size: 18px">Report bugs</p></a></div>
+    
+<div class="content">
+    <form name="formid">
+<h2>CIT Generator</h2>
+<h3>by <a href="https://pablomcprojects.github.io/pablomcprojects/" style="color: #e84c2a; font-style: italic">pablomcprojects</a></h3>
+<h1>General Properties</h1>
+<table class="organizer">
+    <tr>
+        <td>
+            <div class="optionbox">
+                <p>Type <i class="required"></i></p>
+<p class="description">Type of texture to replace:<br>
+                    &emsp;-item: simple item texture replacement (held items, GUI, dropped, etc).<br>
+                    &emsp;-enchantment: overlay texture for enchanted items (glint).<br>
+                    &emsp;-armor: armor models worn by players and mobs.<br>
+                    &emsp;-elytra: simple item texture replacement (held items, GUI, dropped, etc).
+</p>
+                    <select name="typeselect" id="typelist" onchange="getType();yesnoCheck();">
+                        <option value="" selected disabled>Select a type</option>
+                        <option value="item">item</option>
+                        <option value="enchantment">enchantment</option>
+                        <option value="armor">armor</option>
+                        <option value="elytra">elytra</option>
+                    </select>
+            </div>
+        </td>
+        <td>
+            <div class="optionbox">
+                <p>Item  <i class="required" id="switchclass"></i></p>
+                <p class="description center">Namespaced ID of the item to apply the texture to.</p>
+                    <input id="itemID" type="text" placeholder="ex: minecraft:iron_axe" onkeyup="getItemID()" name="itemselect">
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div class="optionbox">
+                <p>Name <i class="optional"></i></p>
+                <p class="description center">The item display name that has to match for the texture to apply.</p>
+                    <input id="displayName" type="text" placeholder="ex. Rusty Axe" onkeyup="getDisplayName()">
+            </div>
+        </td>
+        <td>
+            <div class="optionbox">
+                <p>Description <i class="optional"></i></p>
+                <p class="description center">The item description that has to match for the texture to apply.</p>
+                    <input id="displayLore" type="text" placeholder="ex. Time has corroded the metal of..." onkeyup="getDisplayLore()">
+            </div>
+        </td>
+    </tr>
+</table>
+
+<table class="organizer" id="expandable">
+    <tr><td colspan="2"><h1>Type Specific Properties</h1></td></tr>
+    <tr>
+        <td>
+            <div class="optionbox">
+            <p>Blending mode <i class="optional"></i></p>
+<p class="description">Blend method when overlapping textures.<br>
+                        &emsp;-add: adds pixel values of one layer with the other.<br>
+                        &emsp;-subtract: subtracts pixel values of one layer with the other.<br>
+                        &emsp;-multiply: multiplies the pixel values of one layer with the other.<br>
+                        &emsp;-dodge: sums the pixel values of the layers.<br>
+                        &emsp;-burn: sums the pixel values of the layers and subtracts 1.<br>
+                        &emsp;-screen: inverts layers, multiplies them, and then inverts that result.<br>
+                        &emsp;-replace: replaces the previous layer with the specified one.<br>
+                        &emsp;-overlay: combines multiply and screen blend modes.<br>
+                        &emsp;-alpha: weighted average by alpha value.<br>
+</p>
+                <select name="blend" id="blendlist" onchange="getBlend()">
+                    <option value=" " selected disabled>Select an option</option>
+                    <option value="add">add</option>
+                    <option value="subtract">subtract</option>
+                    <option value="multiply">multiply</option>
+                    <option value="dodge">dodge</option>
+                    <option value="burn">burn</option>
+                    <option value="screen">screen</option>
+                    <option value="replace">replace</option>
+                    <option value="overlay">overlay</option>
+                    <option value="alpha">alpha</option>
+                </select>
+            </div>
+        </td>
+        <td>
+            <div class="optionbox">
+                <p>Speed <i class="optional"></i></p>
+                <p class="description">Scrolling speed of texture, default speed is 0 (no scrolling).</p>
+                    <input type="number" id="speed" placeholder="Insert a number" onkeyup="getSpeed()">
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div class="optionbox">
+                <p>Rotation <i class="optional"></i></p>
+<p class="description">Angle of texture relative to the item, default speed is 0.<br>
+                        If <i>speed</i> is non-zero, the texture will also scroll in this direction.
+</p>
+                    <input type="number" id="rotation" placeholder="Insert a number 0-360" onkeyup="getRotation()">
+            </div>
+        </td>
+        <td>
+            <div class="optionbox">
+                <p>Layer <i class="optional"></i></p>
+<p class="description">Specifies a unique layer and the ordering of the layers as they overlap each other.<br>
+                        If they use the same layer, weight determines which one renders. Default is 0.</p>
+                    <input type="number" id="layer" placeholder="Insert a number" onkeyup="getLayer()">
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div class="optionbox">
+                <p>Duration <i class="optional"></i></p>
+<p class="description">Duration in seconds of the enchantment in a cycle, default is 1 second.<br>
+                        (Only for cycling enchantments)
+</p>
+                    <input type="number" id="duration" placeholder="Insert a number" onkeyup="getDuration()">
+            </div>
+        </td>
+    </tr>
+</table>
+        
+<h1>Path Properties</h1>
+<table class="organizer">
+    <tr>
+        <td>
+            <div class="optionbox">
+                <p>Texture <i class="required"></i></p>
+                <p class="description center">Path to the replacement texture. It can be a full path or just the name.</p>
+                    <input id="textureName" type="text" placeholder="ex. optifine/cit/rusty_axe.png" onkeyup="getTextureName()">
+            </div>
+        </td>
+        <td>
+            <div class="optionbox">
+                <p>Model <i class="optional"></i></p>
+                <p class="description center">Path to the replacement model. It can be a full path or just the name.</p>
+                    <input id="modelName" type="text" placeholder="ex. optifine/cit/rusty_axe.json" onkeyup="getModelName()">
+            </div>
+        </td>
+    </tr>
+</table>
+<h1>Enchantment Properties</h1>
+<table class="organizer">
+    <tr>
+        <td>
+            <div class="optionbox">
+                <p>Enchantment <i class="optional"></i></p>
+                <p class="description center">List of enchantments the item has to match for the replacement texture to apply.</p>
+                    <select name="enchantmentid" id="typelist" onchange="getEnchantmentID()">
+                        <option value="" selected disabled>Select an option</option>
+                        <option value="aqua_affinity">Aqua Affinity</option>
+                        <option value="bane_of_arthropods">Bane of Arthropods</option>
+                        <option value="blast_protection">Blast Protection</option>
+                        <option value="channeling">Channeling</option>
+                        <option value="binding_curse">Curse of Binding</option>
+                        <option value="vanishing_curse">Curse of Vanishing</option>
+                        <option value="depth_strider">Depth Strider</option>
+                        <option value="efficiency">Efficiency</option>
+                        <option value="feather_falling">Feather Falling</option>
+                        <option value="fire_aspect">Fire Aspect</option>
+                        <option value="fire_protection">Fire Protection</option>
+                        <option value="flame">Flame</option>
+                        <option value="fortune">Fortune</option>
+                        <option value="frost_walker">Frost Walker</option>
+                        <option value="impaling">Impaling</option>
+                        <option value="infinity">Infinity</option>
+                        <option value="knockback">Knockback</option>
+                        <option value="looting">Looting</option>
+                        <option value="loyalty">Loyalty</option>
+                        <option value="luck_of_the_sea">Luck of the Sea</option>
+                        <option value="lure">Lure</option>
+                        <option value="mending">Mending</option>
+                        <option value="multishot">Multishot</option>
+                        <option value="piercing">Piercing</option>
+                        <option value="power">Power</option>
+                        <option value="projectile_protection">Projectile Protection</option>
+                        <option value="protection">Protection</option>
+                        <option value="punch">Punch</option>
+                        <option value="quick_charge">Quick Charge</option>
+                        <option value="respiration">Respiration</option>
+                        <option value="riptide">Riptide</option>
+                        <option value="sharpness">Sharpness</option>
+                        <option value="silk_touch">Silk Touch</option>
+                        <option value="smite">Smite</option>
+                        <option value="soul_speed">Soul Speed</option>
+                        <option value="sweeping">Sweeping Edge</option>
+                        <option value="thorns">Thorns</option>
+                        <option value="unbreaking">Unbreaking</option>
+                    </select>
+            </div>
+        </td>
+        <td>
+            <div class="optionbox">
+                <p>Enchantment level <i class="optional"></i></p>
+                <p class="description center">Levels for the enchantments specified before.</p>
+                    <input type="number" id="enchantmentLevel" placeholder="Insert a number 0-255" onkeyup="getEnchantmentLevel()">
+            </div>
+        </td>
+    </tr>
+</table>
+<h1>Miscellaneous Properties</h1>
+<table class="organizer">
+    <tr>
+        <td>
+            <div class="optionbox">
+                <p>Hand <i class="optional"></i></p>
+<p class="description">Specifies which hand the item is rendered:<br>
+                    &emsp;-any: matches items held in any hand + inventory.<br>
+                    &emsp;-main: only matches items held on the main hand (also applies to GUI).<br>
+                    &emsp;-off: matches items not held with any hand.
+</p>
+                    <select name="hand" id="handlist" onchange="getHand()">
+                        <option value="" selected disabled>Select an option</option>
+                        <option value="any">any</option>
+                        <option value="main">main</option>
+                        <option value="off">off</option>
+                    </select>
+            </div>
+        </td>
+        <td>
+            <div class="optionbox">
+                <p>Stack size <i class="optional"></i></p>
+                <p class="description center">Size of the stacked items (usually either 1, 16 or 64).</p>
+                    <input type="number" id="stackSize" placeholder="Insert a number 0-65535" onkeyup="getStackSize()">
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div class="optionbox">
+                <p>Weight <i class="optional"></i></p>
+<p class="description">If multiple files match the same item, the one with highest weight is used.<br>
+                        If <i>type=enchantment</i> it also determines the rendered layer for the glint.
+</p>
+                    <input type="text" id="weight" placeholder="Insert a number" onkeyup="getWeight()">
+            </div>
+        </td>
+        <td>
+            <div class="optionbox">
+                <p>Damage taken <i class="optional"></i></p>
+<p class="description">For items with durability, damage starts at 0 and increases as it gets damaged.<br>
+                        For other items, damage represents different properties (potion type or wool color).
+</p>
+                    <input type="text" id="damageValue" placeholder="Insert a number 0-65535 or %" onkeyup="getDamageValue()">
+            </div>
+        </td>
+    </tr>
+</table>
+<h1>Potion Properties</h1>
+<table class="organizer">
+    <tr>
+        <td>
+            <div class="optionbox">
+                <p>Potion <i class="optional"></i></p>
+                <p class="description center">Only if <i>item=minecraft:potion</i>. Potion to apply the texture to.</p>
+                    <select name="potionid" id="potionlist" onchange="getPotion()">
+                        <option value="" selected disabled>Select an option</option>
+                        <option value="awkward">Awkward</option>
+                        <option value="fire_resistance">Fire Resistance (3:00)</option>
+                        <option value="long_fire_resistance">Fire Resistance (8:00)</option>
+                        <option value="harming">Harming</option>
+                        <option value="strong_harming">Harming II</option>
+                        <option value="healing">Healing</option>
+                        <option value="strong_healing">Healing II</option>
+                        <option value="invisibility">Invisibility (3:00)</option>
+                        <option value="long_invisibility">Invisibility (8:00)</option>
+                        <option value="leaping">Leaping (3:00)</option>
+                        <option value="strong_leaping">Leaping II (1:30)</option>
+                        <option value="long_leaping">Leaping (8:00)</option>
+                        <option value="luck">Luck (5:00)</option>
+                        <option value="mundane">Mundane</option>
+                        <option value="night_vision">Night Vision (3:00)</option>
+                        <option value="long_night_vision">Night Vision (8:00)</option>
+                        <option value="poison">Poison (0:45)</option>
+                        <option value="strong_poison">Poison II (0:21)</option>
+                        <option value="long_poison">Poison (1:30)</option>
+                        <option value="regeneration">Regeneration (0:45)</option>
+                        <option value="strong_regeneration">Regeneration II (0:22)</option>
+                        <option value="long_regeneration">Regeneration (1:30)</option>
+                        <option value="slowness">Slowness (1:30)</option>
+                        <option value="strong_slowness">Slowness IV (0:20)</option>
+                        <option value="long_slowness">Slowness (4:00)</option>
+                        <option value="strenght">Strenght (3:00)</option>
+                        <option value="strong_strenght">Strenght II (1:30)</option>
+                        <option value="long_strenght">Strenght (8:00)</option>
+                        <option value="swiftness">Swiftness (3:00)</option>
+                        <option value="strong_swiftness">Swiftness II (1:30)</option>
+                        <option value="long_swiftness">Swiftness (8:00)</option>
+                        <option value="turtle_master">Turtle Master (0:20)</option>
+                        <option value="strong_turtle_master">Turtle Master II (0:20)</option>
+                        <option value="long_turtle_master">Turtle Master (0:40)</option>
+                        <option value="thick">Thick</option>
+                        <option value="water">Water Bottle</option>
+                        <option value="water_breathing">Water Breathing (3:00)</option>
+                        <option value="long_water_breathing">Water Breathing (8:00)</option>
+                        <option value="weakness">Weakness (1:30)</option>
+                        <option value="long_weakness">Weakness (4:00)</option>
+                    </select>
+            </div>
+        </td>
+        <td></td>
+    </tr>
+</table>
+    </form>
+
+    
+
+<div class="resultbox" id="result">
+    <label id="lblmess0a">#Generated using Pablo's CIT properties generator</label>
+    <label id="lblmess0a">#More in https://pablomcprojects.github.io/pablomcprojects</label>
+    <label><span id="lblmess0" style="color:#61afef"></span><span id="val0" style="color:#ffa545"></span></label>
+    <label><span id="lblmess1" style="color:#61afef"></span><span id="val1" style="color:#ffa545"></span></label>
+    <label><span id="lblmess2" style="color:#61afef"></span><span id="val2" style="color:#ffa545"></span></label>
+    <label><span id="lblmess3" style="color:#61afef"></span><span id="val3" style="color:#ffa545"></span></label>
+    <label><span id="lblmess3a" style="color:#61afef"></span><span id="val3a" style="color:#ffa545"></span></label>
+    <label><span id="lblmess4" style="color:#61afef"></span><span id="val4" style="color:#ffa545"></span></label>
+    <label><span id="lblmess5" style="color:#61afef"></span><span id="val5" style="color:#ffa545"></span></label>
+    <label><span id="lblmess6" style="color:#61afef"></span><span id="val6" style="color:#ffa545"></span></label>
+    <label><span id="lblmess7" style="color:#61afef"></span><span id="val7" style="color:#ffa545"></span></label>
+    <label><span id="lblmess8" style="color:#61afef"></span><span id="val8" style="color:#ffa545"></span></label>
+    <label><span id="lblmess9" style="color:#61afef"></span><span id="val9" style="color:#ffa545"></span></label>
+    <label><span id="lblmess10" style="color:#61afef"></span><span id="val10" style="color:#ffa545"></span></label>
+    <label><span id="lblmess11" style="color:#61afef"></span><span id="val11" style="color:#ffa545"></span></label>
+    <label><span id="lblmess12" style="color:#61afef"></span><span id="val12" style="color:#ffa545"></span></label>
+    <label><span id="lblmess13" style="color:#61afef"></span><span id="val13" style="color:#ffa545"></span></label>
+    <label><span id="lblmess14" style="color:#61afef"></span><span id="val14" style="color:#ffa545"></span></label>
+    <label><span id="lblmess15" style="color:#61afef"></span><span id="val15" style="color:#ffa545"></span></label>
+    <label><span id="lblmess16" style="color:#61afef"></span><span id="val16" style="color:#ffa545"></span></label>
+</div>
+<script src="calculator.js"></script>
+<center><a href="https://discord.gg/MV5qYDZBdQ" target="_blank"><img style="margin: 5px" src="https://imgur.com/I0Lzsnv.png"></a></center>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
