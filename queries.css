@@ -1,0 +1,272 @@
+@media screen and (max-width: 668px) {
+    header, .filterbox {
+        display: none;
+    }
+    .topnav {
+        width: 100%;
+        position: fixed;
+        display: block;
+        text-align: center;
+        margin: 0;
+    }
+    .logonav2 {
+        width: 40%;
+        margin: 0;
+        padding: 0;
+    }
+    .topnav #myLinks { /* Buttons BG*/
+        display: none;
+        background-color: #22252d;
+    }
+    .topnav a {
+        color: white;
+        text-decoration: none;
+        font-size: 17px;
+        padding: 5px 5px;
+        display: block;
+        margin: 0;
+    }
+    .icon {
+        display: block;
+        position: absolute;
+        right: 10px;
+        top: 7px;
+        width: 30px;
+        height: 30px;
+    }
+    .icon img {
+        width: 100%;
+    }
+    .active2 {
+        background: rgb(60,63,69);
+        background: linear-gradient(180deg, #3c3f45 0%, #2e3139 70%);
+        box-shadow: 0px 5px 15px 5px rgba(21,23,28,0.3);
+    }
+    
+    .welcomescreen {
+        padding-top: 55px;
+    }
+    .welcomescreen img {
+        width: 100%;
+        padding: 0;
+        background: none;
+    }
+    h1 {
+        font-size: 20px;
+    }
+    h2 {
+        font-size: 13px;
+    }
+    #projects {
+        width: 90%;
+        font-size: 14px;
+        margin: auto;
+    }
+    .itembox ul {
+        width: 100%;
+        padding: 0;
+    }
+    .itembox {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .box {
+        width: 100%;
+        height: 100px;
+        margin: 0px 0px 10px 0px;
+        padding: 0;
+    }
+    .elementbox {
+        width: 100%;
+        height: 110px;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .elementbox a img {
+        display: inline;
+        padding: 0;
+        margin: 0;
+        width: 150px;
+        float: left;
+    }
+    .elementbox h3 {
+        padding-left: 160px;
+        margin: 0;
+        font-size: 14px
+    }
+    .vers {
+        font-size: 10px;
+    }
+    .elementbox p {
+        font-size: 12px;
+        padding-left: 3px;
+        margin: 0;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+    }
+    .descriptiontxt {
+        font-size: 12px;
+        width: 90%;
+    }
+    .descriptiontxt2 {
+        font-size: 12px;
+        width: 90%;
+        margin: auto;
+        padding: 0
+    }
+    .about, .referrals, .smlist, form, .projects {
+        width: 100%;
+    }
+    .referrals a img {
+        width: 90%;
+        margin: 5px;
+        padding: 0;
+    }
+    .smlist a div {
+        width: 90%;
+        font-size: 20px;
+    }
+    .smlist a div img {
+        width: 30px;
+        margin-left: 60px
+    }
+    form input {
+        width: 90%;
+        margin: 5px;
+    }
+}
+
+@media screen and (min-width: 668px) and (max-width: 1024px) {
+    header, .filterbox {
+        display: none;
+    }
+    .topnav {
+        width: 100%;
+        position: fixed;
+        display: block;
+        text-align: center;
+        margin: 0;
+    }
+    .logonav2 {
+        width: 40%;
+        margin: 0;
+        padding: 0;
+    }
+    .topnav #myLinks { /* Buttons BG*/
+        display: none;
+        background-color: #22252d;
+    }
+    .topnav a {
+        color: white;
+        text-decoration: none;
+        font-size: 30px;
+        padding: 5px 5px;
+        display: block;
+        margin: 0;
+        transition: all 0.5s ease 0s;
+    }
+    .topnav a:hover {
+        color: #fd7131;
+    }
+    .icon {
+        display: block;
+        position: absolute;
+        right: 10px;
+        top: 20px;
+        width: 60px;
+        height: 60px;
+    }
+    .icon img {
+        width: 100%;
+    }
+    .active2 {
+        background: rgb(60,63,69);
+        background: linear-gradient(180deg, #3c3f45 0%, #2e3139 70%);
+        box-shadow: 0px 5px 15px 5px rgba(21,23,28,0.3);
+    }
+    .welcomescreen {
+        padding-top: 115px;
+    }
+    .welcomescreen img {
+        width: 100%;
+        padding: 0;
+        background: none;
+    }
+    .projects {
+        padding: 0;
+        margin: 0 auto;
+        width: 700px;
+    }
+    .itembox {
+        width: 620px;
+        margin: 0 auto;
+        padding: 0;
+    }
+    .itembox ul {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0;
+    }
+    .box {
+        float: left;
+        margin: 0 auto;
+        margin: 5px;
+    }
+    .elementbox {
+        width: 100%;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .elementbox a img {
+        display: inline;
+        padding: 0;
+        margin: 0;
+        width: 300px;
+        float: left;
+    }
+    .elementbox h3 {
+        margin: 0px 0px 0px 5px;
+        font-size: 18px
+    }
+    .elementbox p {
+        font-size: 16px;
+        padding-left: 3px;
+        margin: 0;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+    .vers {
+        font-size: 12px;
+    }
+    .about, .referrals, .smlist, form {
+        width: 100%;
+    }
+    .descriptiontxt {
+        font-size: 20px;
+        width: 90%;
+    }
+    .descriptiontxt2 {
+        font-size: 18px;
+        width: 90%;
+        margin: auto;
+        padding: 0
+    }
+    .referrals a img {
+        width: 95%;
+        margin: 5px;
+        padding: 0;
+    }
+    .smlist a div {
+        width: 50%;
+        font-size: 28px;
+    }
+    .smlist a div img {
+        width: 30px;
+        margin-left: 60px
+    }
+    form input {
+        width: 95%;
+        margin: 5px;
+    }
+}
