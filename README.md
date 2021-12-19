@@ -1,2 +1,0 @@
-# .com
-Resources For Minecraft  
