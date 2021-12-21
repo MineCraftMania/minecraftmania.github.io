@@ -103,6 +103,12 @@ header a img  {
     width: 100%;
     padding-top: 80px;
     background-color: #3183fd; 
+
+}
+.showingboi img {
+    width: 50%;
+    padding-top: 80px;
+    background-color: #3183fd; 
 }
 ::-webkit-scrollbar {
     background: rgb(14,18,22);
