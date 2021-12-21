@@ -112,8 +112,8 @@ header a img  {
     transition: all 0.5s ease 0s;
 }
 ::-webkit-scrollbar-thumb {
-    background: rgb(252,112,50);
-    background: linear-gradient(230deg, rgba(252,112,50,1) 0%, rgba(239,49,40,1) 100%);
+    background: rgb(50,138,252);
+    background: linear-gradient(230deg, rgba(50,158,252) 0%, rgba(40,40,239) 100%);
     border-radius: 200px;
 }
 .hr {
