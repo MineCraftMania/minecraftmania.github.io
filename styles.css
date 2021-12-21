@@ -178,7 +178,7 @@ header a img  {
 }
 .elementbox:hover {
     transform: scale(0.95);
-    border: 4px solid #fd7131;
+    border: 4px solid #3172fd;
     border-radius: 10px;
     transition: all 0.2s ease 0s;
 }
