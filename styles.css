@@ -52,7 +52,7 @@ p {
     margin: 0;
 }
 .highlight {
-    color: #e84c2a;
+    color: #2a8fe8;
     font-size: 20px;
 }
 header a img  {
@@ -75,7 +75,7 @@ header a img  {
     transition: all 0.2s ease 0s;
 }
 .navlist li a:hover {
-    color: #fd7131;
+    color: #3183fd;
 }
 .navlist li:hover {
     transform: translateY(-5px);
@@ -92,7 +92,7 @@ header a img  {
 }
 .contactbtn:hover {
     transform: scale(1.05);
-    color: #fd7131;
+    color: #3183fd;
 }
 .fixed {
     height: 65px;
@@ -102,7 +102,7 @@ header a img  {
 .welcomescreen img {
     width: 100%;
     padding-top: 80px;
-    background-color: #fd7131; 
+    background-color: #3183fd; 
 }
 ::-webkit-scrollbar {
     background: rgb(14,18,22);
@@ -119,14 +119,14 @@ header a img  {
 .hr {
     border-radius: 200px;
     width: 95%;
-    background: #fd7131;
+    background: #3183fd;
     height: 4px;
     margin: 10px auto 20px auto;
 }
 .hr2 {
     border-radius: 200px;
     width: 80%;
-    background: #fd7131;
+    background: #3183fd;
     height: 4px;
     margin: 25px auto 15px auto;
 }
@@ -206,7 +206,7 @@ header a img  {
     transition: all 0.2s ease 0s;
 }
 .filter:hover {
-    color: #e84c2a;
+    color: #2a8fe8;
     transform: translateX(5px);
 }
 .show {
@@ -224,17 +224,17 @@ header a img  {
     font-size: 20px;
 }
 .btn:hover {
-    color: #fd7131;
+    color: #3183fd;
     transform: translateX(8px);
 }
 .btn.active {
-    color: #fd7131;
+    color: #3183fd;
     transform: translateX(8px);
 }
 .vers {
     font-size: 14px;
-    background: rgb(252,112,50);
-    background: linear-gradient(230deg, rgba(252,112,50,1) 0%, rgba(239,49,40,1) 100%);
+    background: rgb(42,143,232);
+    background: linear-gradient(230deg, rgba(49,131,253) 0%, rgba(40,50,239) 100%);
     padding: 0px 10px 0px 10px;
     border-radius: 200px;
     margin: 0px 0px 0px 5px;
