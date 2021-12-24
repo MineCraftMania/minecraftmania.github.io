@@ -54,13 +54,13 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .page-heading {
-	margin: 0px 10px;
+        margin: 0px 10px;
 	padding: 120px 0px;
 	text-align: left;
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-image: src="images/welcome.png";
+	background-image: url(../images/heading-bg.jpg);
 }
 
 .page-heading .text-content h4 {
