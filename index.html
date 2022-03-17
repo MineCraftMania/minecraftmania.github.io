@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Primary Meta Tags -->
+<title>MineCraftMania Resources | Portfolio</title>
+<meta name="title" content="MineCraftMania Resources  | Submissions">
+<meta name="description" content="The website where you see all projects by our wonderful community of Minecraft, guides and more :)">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="">
+<meta property="og:title" content="MineCraftMania Resources  | Portfolio">
+<meta property="og:description" content="The website where you can check all my projects, guides and more :)">
+<meta property="og:image" content="">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="">
+<meta property="twitter:title" content="MineCraftMania Resources | Portfolio">
+<meta property="twitter:description" content="The website where you can check all my projects, guides and more :)">
+<meta property="twitter:image" content="">
+    
+<!-- Misc -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="favicon.ico" />
+
+<!-- Import Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    
+<!-- Stylesheets-->
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="queries.css">
+<style>
+.bug {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        width: 150px;
+        text-align: center;
+        color: #FFF;
+        font-weight: bold;
+    }
+    .bugbutton {
+        width: 50px;
+        border-radius: 50px;
+        height: 50px;
+        background: rgbrgb(0,191,255);
+        background: linear-gradient(45deg, rgb(0,191,255) 0%, rgb(65,105,225) 50%);
+        margin: auto;
+        transition: all 0.2s ease 0s;
+    }
+    .bugbutton img {
+        width: 40%;
+        margin-top: 5px
+    }
+    
+    .bug:hover .bugbutton {
+        transform: scale(0.95)
+    } 
+   
+</style>
+</head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HQB42Y41EV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-HQB42Y41EV');
+</script>
+<body>
+<!-- Navigation Bar-->
+    <header id="sticky">
+        <a href="index.html"><img class="logonav" id="logo" src="images/logo2.png"></a>
+        <nav>
+            <ul class="navlist">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <a href=""><button class="contactbtn">&nbsp;</button></a>
+    </header>
+<script>
+var sticky = document.getElementById('sticky');
+
+window.addEventListener('scroll', function(){
+    
+    if (window.pageYOffset > 65) {
+        
+        sticky.classList.add('fixed');
+        document.getElementById('logo').src = 'images/logo.png';
+    }
+    else {
+        sticky.classList.remove('fixed');
+        document.getElementById('logo').src = 'images/logo2.png';
+    }
+})
+</script>
+<div class="bug"><a href="https://github.com/MineCraftMania" target="_blank" style="text-decoration: none"><div class="bugbutton"><img src="https://imgur.com/4zx4WCI.png"></div><p style="text-align: center; font-size: 18px">Report bugs</p></a></div>
+
+<!-- Mobile Navigation Bar -->
+<div class="topnav">
+  <a href="index.html" class="active2"><img class="logonav2" src="images/logo2.png"></a>
+  <div id="myLinks">
+    <a href="#home">Home</a>
+    <a href="#projects">Projects</a>
+    <a href="#about">About</a>
+  </div>
+    <a href="javascript:void(0);" class="icon" onclick="burgerMenu()"><img src="images/burger.png"></a>
+</div>
+<script>
+function burgerMenu() {
+    var x = document.getElementById("myLinks");
+
+    if (x.style.display === "block") {
+        x.style.display = "none";
+    }
+    else {
+        x.style.display = "block";
+    }
+}
+
+</script>
+    
+<!-- Welcome Screen-->
+    <div class="welcomescreen" id="home">
+        <img src="images/welcome.png">
+        <h2>This is the official List Of All The Submissions </h2>
+<p id="projects"><span class="highlight">&#11167;&emsp;</span> scroll down to see all submissions <span class="highlight">&emsp;&#11167;</span></p>
+    </div>
+<br>
+    
+    
+<!-- Projects-->
+        <h1>Projects</h1>
+<div class="hr"></div>
+    <div class="projects">
+        <div class="filterbox" id="myBtnContainer">
+            <h1>Filter List</h1>
+<div class="hr2"></div>
+                <button class="btn active" onclick="filterSelection('all')">Show All</button>
+<div class="hr2"></div>
+            <h1 class="smaller">version</h1>
+                <button class="btn" onclick="filterSelection('v181')">1.18.1</button>
+                <button class="btn" onclick="filterSelection('v171')">1.17.1</button>
+                <button class="btn" onclick="filterSelection('v162')">1.16.2</button>
+                <button class="btn" onclick="filterSelection('v161')">1.16.1</button>
+<div class="hr2"></div>
+            <h1 class="smaller">requirements</h1>
+                <button class="btn" onclick="filterSelection('optifine')">Optifine</button>
+<div class="hr2"></div>
+            <h1 class="smaller">features</h1>
+                <button class="btn" onclick="filterSelection('ctm')">Connected Textures</button>
+                <button class="btn" onclick="filterSelection('cit')">Custom Items</button>
+                <button class="btn" onclick="filterSelection('models')">Custom Models</button>
+                <button class="btn" onclick="filterSelection('env')">Environment</button>
+                <button class="btn" onclick="filterSelection('sound')">Sounds</button>
+                <button class="btn" onclick="filterSelection('variety')">Variety</button>
+                <button class="btn" onclick="filterSelection('entities')">Mobs / Entities</button>
+                <button class="btn" onclick="filterSelection('gui')">GUI / HUD</button>
+                <button class="btn" onclick="filterSelection('particles')">Particles</button>
+                <button class="btn" onclick="filterSelection('exp')">Experimental</button>
+<div class="hr2"></div>
+        </div>
+        <div class="itembox">
+            <ul>
+   <!--Item-->    <li class="box v181 exp">
+                    <div class="elementbox">
+                        <a href="https://minecraftmania.github.io/templatemo_551_stand_blog/Elden%20Ring%20Background%20Music.html" target="_blank">
+                            <img src="images/thumbnails/Elden Ring Background Music.png">
+                            <h3>Elden Ring Background Music</h3><div class="tagbox"><div class="vers">Sounds</div></div>
+<p>This resource pack replaces the vanilla music with music from the ost of Elden Ring.</p>
+                                   </a>
+                    </div>
+                </li>                   
+ <!--Item-->    <li class="box v181 exp">
+                    <div class="elementbox">
+                        <a href="https://minecraftmania.github.io/templatemo_551_stand_blog/Older%20Iron%20Chest.html" target="_blank">
+                            <img src="images/thumbnails/Older Iron Chest.png">
+                            <h3>Green Apple</h3><div class="tagbox"><div class="vers">Variety</div><div class="vers">Custom Items</div></div>
+<p>Are you playing with Iron Chest mod in 1.16 and miss the 1.12 textures? Well good news with this you can return the textures of the Iron Chest mod from 1.12</p>
+                                   </a>
+                    </div>
+                </li>                   
+<!--Item-->    <li class="box v181 exp">
+                    <div class="elementbox">
+                        <a href="https://minecraftmania.github.io/templatemo_551_stand_blog/Green%20Apple.html" target="_blank">
+                            <img src="images/thumbnails/Green Apple.png">
+                            <h3>Green Apple</h3><div class="tagbox"><div class="vers">Variety</div><div class="vers">Custom Items</div></div>
+<p>A Simple Pack, The Red Apples Have Been Replaced With My Version Of Green Apples :)</p>
+                                   </a>
+                    </div>
+                </li>    
+<!--Item-->    <li class="box v181 exp">
+                    <div class="elementbox">
+                        <a href="https://minecraftmania.github.io/templatemo_551_stand_blog/Milk%20Pack.html" target="_blank">
+                            <img src="images/thumbnails/Milk Pack.png">
+                            <h3>Milk Pack</h3><div class="tagbox"><div class="vers">1.18</div></div>
+<p>milk bucket item into a 3D milk carton model. That's it, that's the whole pack.</p>
+                            </a>
+                    </div>
+                </li>                                     
+<!--Item-->    <li class="box v181 exp">
+                    <div class="elementbox">
+                        <a href="templatemo_551_stand_blog/Kawaii Fox Pack.html" target="_blank">
+                            <img src="images/thumbnails/Kawaii Fox Pack.png">
+                            <h3>Kawaii Fox Pack</h3><div class="tagbox"><div class="vers">1.18</div></div>
+<p>The Fox Pack is a remodeling of the normal Minecraft Fox. Now there are 2 different variations...</p>
+                            </a>
+                    </div>
+                </li>                         
+<!--Item-->    <li class="box v181 exp">
+                    <div class="elementbox">
+                        <a href="templatemo_551_stand_blog/Blood Moon.html" target="_blank">
+                            <img src="images/thumbnails/Bloody Moon.png">
+                            <h3>Bloody Moon</h3><div class="tagbox"><div class="vers">1.18</div></div>
+<p>Changes every moon phase to look red, similar to a blood moon. It is just visual and will not summon any extra mobs opposite from a mod. </p>
+                            </a>
+                    </div>
+                </li>                    
+<!--Item-->    <li class="box v181 exp">
+                    <div class="elementbox">
+                        <a href="templatemo_551_stand_blog/Thick Greenery.html" target="_blank">
+                            <img src="images/thumbnails/Thick Greenery.png">
+                            <h3>Thicker Greenery</h3><div class="tagbox"><div class="vers">1.18</div><div class="vers">Custom Items</div></div>
+<p>Do you think some of the grass and other vegetation in Minecraft can be a little flat? shallow? So don't worry, I've spent countless days and nights creating this resource pack that will give your environment additional dimension.
+</p>
+                            </a>
+                    </div>
+                </li>                             
+ <!--Item-->    <li class="box v181 models i">
+                    <div class="elementbox">
+                        <a href="templatemo_551_stand_blog/Better Bow.html" target="_blank">
+                            <img src="images/thumbnails/Better Bow.png">
+                            <h3>Better Bow</h3><div class="tagbox"><div class="vers">1.18</div><div class="vers">Custom Items</div></div>
+<p>The hilt is metal and the string gets bluer the more you pull it....</p>
+                            </a>
+                    </div>
+                </li>                             
+ <!--Item-->    <li class="box v181 models i">
+                    <div class="elementbox">
+                        <a href="templatemo_551_stand_blog/Kawaii Piggy Pack.html" target="_blank">
+                            <img src="images/thumbnails/Kawaii Piggy Pack.png">
+                            <h3>Kawaii Piggy Pack</h3><div class="tagbox"><div class="vers">1.18</div><div class="vers">Optifine</div></div>
+<p>The Piggy Pack is a remodeling of the normal Minecraft pig. Now there are seven different variations...</p>
+                            </a>
+                    </div>
+                </li>              
+ <!--Item-->    <li class="box v181 models i">
+                    <div class="elementbox">
+                        <a href="templatemo_551_stand_blog/Wilder Animlas.html" target="_blank">
+                            <img src="images/thumbnails/Wilder Animals.png">
+                            <h3>Wilder Animals</h3><div class="tagbox"><div class="vers">1.18</div><div class="vers">Mobs</div><div class="vers">Optifine</div></div>
+<p>The goal of this resource pack is to add variety to the animals of minecraft</p>
+                            </a>
+                    </div>
+                </li>
+ <!--Item-->    <li class="box v181 models i">
+                    <div class="elementbox">
+                        <a href="templatemo_551_stand_blog/Super Circuit Polish.html" target="_blank">
+                            <img src="images/thumbnails/Super Circuit Polish.png">
+                            <h3>Super Circuit Polish </h3><div class="tagbox"><div class="vers">1.18</div><div class="vers">1.17</div></div>
+<p>Retextures and remodels Super Circuit maker to fit better in modern Minecraft's style. This means many components have much simpler models, and some textures are no longer based off of programmer art. The alternate textures for Redstone-Impregnated Sticks, Tiny Redstone, and the Screwdriver are available in an older file.</p>
+                            </a>
+                    </div>
+                </li>
+<!--Item-->    <li class="box v162 v161 v171 v181 optifine ctm cit models env sound variety entities gui">
+                    <div class="elementbox">
+                        <a href="templatemo_551_stand_blog/Gargantuan Christmas Pack.html" target="_blank">
+                            <img src="images/thumbnails/oie_zJKtZiETdX2q.png">
+                            <h3>Gargantuan Christmas Pack </h3><div class="tagbox"><div class="vers">1.18</div><div class="vers">Optifine</div></div>
+<p>Made A Full Christmas Pack For The Most Magical Time Of The Year ENJOY:) </p>
+                            </a>
+                    </div>
+                </li>
+<!--Item-->    <li class="box v181 v171 exp">
+                    <div class="elementbox">
+                        <a href="templatemo_551_stand_blog/The Giant Tools Remaster.html" target="_blank">
+                            <img src="images/thumbnails/oie_png.png">
+                            <h3>The Giant Tools Remaster</h3><div class="tagbox"><div class="vers">1.18</div><div class="vers">1.17</div></div>
+<p>This resourcepack enhances the Tools to look more consistent.</p>
+                        
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+<script src="filtering.js"></script>
+    
+    </div>
+
+    <div class="hr" id="about"></div>
+    
+<!-- About-->
+    <h1>About</h1>
+<div class="about">
+    
+    
+    </div>
+    
+    <h2>How to support our website?</h2>
+    <p class="descriptiontxt">If you wish to support our website work, there are several ways to do it; one way is with the use of referrals and codes, which give me a commission everytime someone is referred with them, another way is making use of direct donations.</p>
+    
+    <div class="referrals">
+        
+        <h2 style="text-decoration: none">Coinbase</h2>
+    <p class="descriptiontxt2">
+        Coinbase is a secure platform that makes it easy to buy, sell, and store cryptocurrency like Bitcoin, Ethereum, and more. <b>I personally tried this website</b> and I can assure you it's the best crypto market for beginners. They offer you information about new tokens and after taking a quiz, you're rewarded with $3 to invest in the coin of your choice. <b>You must be +18 to use this service.</b>
+    </p>
+        <a href="https://www.coinbase.com/join/XZJ10J" target="_blank"><img src="images/referral1.png"></a>
+        
+        <h2 style="text-decoration: none">AdFocus</h2>
+    <p class="descriptiontxt2">
+        AdFocus is a free short URL redirection service with a twist. Get paid for links you share on the internet. You probably noticed I use this service to generate a bit of revenue everytime someone clicks certain links, while the pay rate is not as high as their competitors, they are very professional and stable. The CPM varies from country to country. Make sure you check their Terms &amp; Conditions, if you break their rules or use this service unfaithfully you may be penalized.
+    </p>
+        <a href="http://adfoc.us/?refid=719411" target="_blank"><img src="images/referral2.png"></a>
+        
+    </form>
+
+    </div>
+    
+    <div class="hr" id="contact"></div>
+<!-- About-->
+    <h1>Contact</h1>
+<div class="Contact">
+    
+     <h2>Do You Want Your Project On The Site ?!?</h2>
+     <p class="descriptiontxt">You can Contact Us On The Following Email With Your Name And Project Details:  minecraftmania991@gmail.com</p>
+   
+    
+    
+    
+    
+</div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</body>
+</html>
